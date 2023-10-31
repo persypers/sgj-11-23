@@ -1,0 +1,22 @@
+using UnityEngine;
+using Fancy;
+
+namespace ##NAMESPACE##
+{
+
+public class ##CLASS## : ##PARENTCLASS##
+{
+
+	protected override void OnEnable()
+	{
+		base.OnEnable();
+	}
+
+	protected override void OnDisable()
+	{
+		base.OnDisable();
+	}
+
+}
+
+}
