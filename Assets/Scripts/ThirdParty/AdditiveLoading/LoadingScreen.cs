@@ -8,14 +8,12 @@ public class LoadingScreen : MonoBehaviour
 	[SerializeField] private Image progressBar;
 	//[SerializeField] private TMPro.TMP_Text progressLabel;
 	private AsyncOperation operation;
-	private int prevProgress;
 	private Animator animator;
 	private System.Action onShow;
 	private System.Action onHide;
 	public void Show(System.Action onDone = null, bool instant = false, AsyncOperation operation = null)
 	{
 		var anim = GetComponent<Animator>();
-		prevProgress = -1;
 		this.onShow = onDone;
 		this.operation = operation;
 		gameObject.SetActive(true);

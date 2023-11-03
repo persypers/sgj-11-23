@@ -13,14 +13,18 @@ namespace RigidFps
 		[Tooltip("Reference to the main camera used for the player")]
 		public Camera PlayerCamera;
 
+		public HandScript hand;
+		public LayerMask handLayermask;
+
 		[Tooltip("Audio source for footsteps, jump, etc...")]
 		public AudioSource AudioSource;
 
 		[Tooltip("Height at which the player dies instantly when falling off the map")]
 		public float KillHeight = -50f;
 
-		[Header("Rotation")] [Tooltip("Rotation speed for moving the camera")]
+		[Header("Controls")] [Tooltip("Rotation speed for moving the camera")]
 		public float RotationSpeed = 200f;
+		public float handRaycastDistance = 1.0f;
 
 		[Header("Audio")] [Tooltip("Amount of footstep sounds played when moving one meter")]
 		public float FootstepSfxFrequency = 1f;
@@ -61,8 +65,9 @@ namespace RigidFps
 		Vector3 groundNormal;
 		Vector3 characterVelocity;
 		Vector3 latestImpactSpeed;
-		float lastTimeJumped = 0f;
+		//float lastTimeJumped = 0f;
 		float cameraVerticalAngle = 0f;
+		float handRaycastHeight;
 		float footstepDistanceCounter;
 
 		const float k_JumpGroundingPreventionTime = 0.2f;
@@ -79,6 +84,12 @@ namespace RigidFps
 			collider = GetComponent<CapsuleCollider>();
 			rigidbody = GetComponent<Rigidbody>();
 			groundCheck = GetComponentInChildren< GroundCheck >();
+
+			handRaycastHeight = hand.transform.localPosition.y;
+
+			PlayerCamera.transform.parent = null;
+			hand.transform.parent = null;
+			//hand.gameObject.SetActive( !hand.IsEmpty );
 		}
 
 		void Update()
@@ -96,7 +107,7 @@ namespace RigidFps
 			if (IsGrounded && !wasGrounded)
 			{
 				// land SFX
-				AudioSource.PlayOneShot(LandSfx);
+				//AudioSource.PlayOneShot(LandSfx);
 			}
 
 			if( jumpTimeout > 0.0f )
@@ -111,12 +122,14 @@ namespace RigidFps
 				if (footstepDistanceCounter >= 1f / chosenFootstepSfxFrequency)
 				{
 					footstepDistanceCounter = 0f;
-					AudioSource.PlayOneShot(FootstepSfx);
+					//AudioSource.PlayOneShot(FootstepSfx);
 				}
 
 				// keep track of distance traveled for footsteps sound
 				footstepDistanceCounter += rigidbody.velocity.magnitude * Time.deltaTime;
 			}
+
+			HandleHand( Time.deltaTime );
 
 			//HandleCharacterRotation( Time.deltaTime );
 
@@ -178,6 +191,11 @@ namespace RigidFps
 					dt
 				);
 			}
+
+			if( hand != null )
+			{
+				hand.SetTargetRotation( new Vector3( cameraVerticalAngle, bearing, 0) );
+			}
 		}
 
 		void HandleCharacterMovement( float dt )
@@ -201,11 +219,30 @@ namespace RigidFps
 				rigidbody.AddForce( Vector3.up * jumpForce, ForceMode.VelocityChange );
 
 				// play sound
-				AudioSource.PlayOneShot(JumpSfx);
+				//AudioSource.PlayOneShot(JumpSfx);
 
 				// Force grounding to false
 				IsGrounded = false;
 				groundNormal = Vector3.up;
+			}
+		}
+
+		void HandleHand( float dt )
+		{
+			if( inputHandler.GetFireInputDown() )
+			{
+				if( hand.IsEmpty )
+				{
+					if( Physics.Raycast( transform.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ),
+						PlayerCamera.transform.forward, out RaycastHit hit, handRaycastDistance, handLayermask ) )
+					{
+						Debug.Log(" hIT! " + hit.collider.gameObject.name );
+						hand.PickUp( hit.rigidbody );
+					}
+				} else 
+				{
+					var item = hand.Drop();
+				}
 			}
 		}
 
