@@ -10,8 +10,10 @@ public class HandScript : MonoBehaviour
 	public ConfigurableJoint armJoint;
 	public ConfigurableJoint gimbalJoint;
 	public Rigidbody itemDummy;
+
 	GameObject item;
 	bool cachedGravity;
+	RigidbodyInterpolation cachedInterpolationMode;
 	
 	Quaternion localGimbalRotation;
 
@@ -55,6 +57,8 @@ public class HandScript : MonoBehaviour
 
 		cachedGravity = body.useGravity;
 		body.useGravity = false;
+		cachedInterpolationMode = body.interpolation;
+		body.interpolation = RigidbodyInterpolation.Interpolate;
 		gimbalJoint.connectedBody = body;
 
 		item = body.gameObject;
@@ -74,6 +78,7 @@ public class HandScript : MonoBehaviour
 		
 		var rb = item.GetComponent< Rigidbody >();
 		rb.useGravity = cachedGravity;
+		rb.interpolation = cachedInterpolationMode;
 		//gimbalJoint.connectedBody = null;
 		itemDummy.transform.position = transform.position;
 		gimbalJoint.connectedBody = itemDummy;
