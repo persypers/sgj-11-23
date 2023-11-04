@@ -8,6 +8,7 @@ public class ItemTrigger : MonoBehaviour
 	public ItemTypes type;
 	public UnityEvent action;
 	public UnityEvent< Item > actionWithItem;
+	public bool allowHeldItems = false;
 	private void OnTriggerEnter(Collider other)
 	{
 		var item = other.GetComponentInParent< Item >();
@@ -15,7 +16,7 @@ public class ItemTrigger : MonoBehaviour
 
 		if( item.type == type )
 		{
-			if( item.IsHeld )
+			if( item.IsHeld && !allowHeldItems )
 			{
 				item.OnDrop.AddListener( Trigger );
 			}

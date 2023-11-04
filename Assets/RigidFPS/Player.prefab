@@ -432,7 +432,7 @@ MonoBehaviour:
   hand: {fileID: 4361840217296619781}
   handLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
   AudioSource: {fileID: 1272397862697293493}
   KillHeight: -50
   RotationSpeed: 200
@@ -440,7 +440,7 @@ MonoBehaviour:
   interactDistance: 2
   interactableLayerMask:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
   FootstepSfxFrequency: 0.3
   FootstepSfx: {fileID: 8300000, guid: f404f8d3c2a4b4f48989fb1120e78fb8, type: 3}
   JumpSfx: {fileID: 8300000, guid: 13b59a14d34add64d84a623867546ff1, type: 3}
@@ -461,7 +461,7 @@ AudioSource:
   m_GameObject: {fileID: 7253983127304857660}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243893235630832048, guid: fcc71635aab95ff4fbdf1880bf2afa2f,
+  OutputAudioMixerGroup: {fileID: 24300002, guid: dd918e42d3a36d04cae0b0a8ae706deb,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -558,7 +558,7 @@ AudioSource:
   m_GameObject: {fileID: 7253983127304857660}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243216109797877232, guid: fcc71635aab95ff4fbdf1880bf2afa2f,
+  OutputAudioMixerGroup: {fileID: 24300002, guid: dd918e42d3a36d04cae0b0a8ae706deb,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 01a15bd1861d7914abbedc36aad1f4d6, type: 3}
   m_PlayOnAwake: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   linealSpringBase: 100
   slerpSpringBase: 3000
   minScaledMass: 9
-  maxScaledMass: 60
+  maxScaledMass: 90
   massScaleCurve:
     serializedVersion: 2
     m_Curve:

@@ -7,7 +7,7 @@ using UnityEditor.ShaderGraph.Internal;
 namespace RigidFps
 {
 	[RequireComponent(typeof(CapsuleCollider), typeof(Rigidbody), typeof(PlayerInputHandler) )]
-	public class Player : MonoBehaviour
+	public class Player : Fancy.MonoSingleton< Player >
 	{
 		[Header("References")] 
 		public Transform rotationRoot;
