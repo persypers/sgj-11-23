@@ -241,12 +241,10 @@ namespace RigidFps
 						PlayerCamera.transform.forward, out RaycastHit hit, handRaycastDistance, handLayerMask ) )
 					{
 						float armDistance = Vector3.Distance( transform.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ), hit.rigidbody.transform.position );
-						Debug.Log("PickUp hit: " + hit.collider.gameObject.name );
-						hand.PickUp( hit.rigidbody, armDistance );
-
+						Debug.Log("PickUp hit: " + hit.rigidbody.gameObject.name );
 						var item = hit.rigidbody.GetComponent< Item >();
-						if( item )
-							item.OnPickUp.Invoke();
+						if( item != null )
+							hand.PickUp( item, hit.rigidbody, armDistance );
 					}
 				} else 
 				{

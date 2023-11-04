@@ -15,12 +15,30 @@ public class ItemTrigger : MonoBehaviour
 
 		if( item.type == type )
 		{
-			action.Invoke();
-			actionWithItem.Invoke( item );
+			if( item.IsHeld )
+			{
+				item.OnDrop.AddListener( Trigger );
+			}
+			else {
+				Trigger( item );
+			}
 		}
+	}
+
+	private void Trigger( Item item )
+	{
+		action.Invoke();
+		actionWithItem.Invoke( item );
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
+		var item = other.GetComponentInParent< Item >();
+		Debug.Assert( item != null, "GameObject has layer 'Item' but no item component: " + other.gameObject.name );
+
+		if( item.type == type )
+		{
+			item.OnDrop.RemoveListener( Trigger );
+		}
 	}
 }

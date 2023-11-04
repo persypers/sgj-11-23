@@ -17,10 +17,7 @@ public class HandScript : MonoBehaviour
 	public ConfigurableJoint gimbalJointPrefab;
 	public Rigidbody itemDummy;
 
-	GameObject item;
-	bool cachedGravity;
-	RigidbodyInterpolation cachedInterpolationMode;
-	
+	Item item;	
 	Quaternion localGimbalRotation;
 
 	public bool IsEmpty => item == null;
@@ -35,13 +32,8 @@ public class HandScript : MonoBehaviour
 		gimbalJointPrefab = Fancy.Helpers.CopyComponent< ConfigurableJoint >( gimbalJoint, go );
 
 		itemDummy.transform.SetParent( null );
-		if( gimbalJoint.connectedBody != null && gimbalJoint.connectedBody != itemDummy )
-			PickUp( gimbalJoint.connectedBody, Mathf.Abs( armJoint.anchor.z ) );
-		else
-		{
-			itemDummy.transform.position = transform.position;
-			gimbalJoint.connectedBody = itemDummy;
-		}
+		itemDummy.transform.position = transform.position;
+		gimbalJoint.connectedBody = itemDummy;
 	}
 
 	void OnEnable()
@@ -50,7 +42,7 @@ public class HandScript : MonoBehaviour
 		UpdateSprings();
 	}
 
-	public void PickUp( Rigidbody body, float armDistance )
+	public void PickUp( Item item, Rigidbody body, float armDistance )
 	{
 		if( !IsEmpty )
 			return;
@@ -62,6 +54,8 @@ public class HandScript : MonoBehaviour
 		var localRotation = transform.rotation * cubeRot * Quaternion.Inverse( body.transform.rotation );
 		*/
 
+		this.item = item;
+
 		var localRotation = Quaternion.identity;
 
 		var euler = localRotation.eulerAngles;
@@ -71,13 +65,8 @@ public class HandScript : MonoBehaviour
 		targetPosition.y = Mathf.Clamp( -( armDistance - Mathf.Abs( armJoint.anchor.z ) ), -armJoint.linearLimit.limit, armJoint.linearLimit.limit );
 		armJoint.targetPosition = targetPosition;
 
-		cachedGravity = body.useGravity;
-		body.useGravity = false;
-		cachedInterpolationMode = body.interpolation;
-		body.interpolation = RigidbodyInterpolation.Interpolate;
 		gimbalJoint.connectedBody = body;
 
-		item = body.gameObject;
 		var offcenteredMass = body.GetComponent< OffcenteredMass >();
 		if( offcenteredMass != null )
 			offcenteredMass.enabled = false;
@@ -87,6 +76,8 @@ public class HandScript : MonoBehaviour
 		UpdateSprings();
 		LockGimbal( true );
 
+		item.PickedUp();
+
 		// TODO: detach item joints
 	}
 
@@ -94,10 +85,6 @@ public class HandScript : MonoBehaviour
 	{
 		if( IsEmpty )
 			return null;
-		
-		var rb = item.GetComponent< Rigidbody >();
-		rb.useGravity = cachedGravity;
-		rb.interpolation = cachedInterpolationMode;
 
 		var offcenteredMass = item.GetComponent< OffcenteredMass >();
 		if( offcenteredMass != null )
@@ -109,7 +96,9 @@ public class HandScript : MonoBehaviour
 
 		LockGimbal( false );
 
-		var result = item;
+		item.Dropped();
+
+		var result = item.gameObject;
 		item = null;
 		return result;
 	}

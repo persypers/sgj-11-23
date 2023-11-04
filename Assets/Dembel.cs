@@ -23,7 +23,7 @@ public class Dembel : MonoBehaviour
 		}
 	}
 
-	void DropGuitar()
+	void DropGuitar( Item guitar )
 	{
 		joint.GetComponent< Item >().OnPickUp.RemoveListener( DropGuitar );
 		GameObject.Destroy( joint );

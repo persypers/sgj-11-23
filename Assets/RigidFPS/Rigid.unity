@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 151667350}
   - component: {fileID: 151667349}
   - component: {fileID: 151667348}
+  - component: {fileID: 151667353}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -401,6 +402,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -27.572, y: -40.723, z: 0}
+--- !u!114 &151667353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151667347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce772343d222ca4d84f22a7c4b93d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  fuelValue: 0
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &153709206
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +474,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: handLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: interactableLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 7253983127304857660, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_Name
@@ -662,6 +693,9 @@ MonoBehaviour:
   OnPickUp:
     m_PersistentCalls:
       m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &513818236
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +710,7 @@ GameObject:
   - component: {fileID: 513818237}
   - component: {fileID: 513818241}
   - component: {fileID: 513818242}
+  - component: {fileID: 513818243}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -813,6 +848,26 @@ HingeJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &513818243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513818236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce772343d222ca4d84f22a7c4b93d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  fuelValue: 0
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &567528838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1187,7 @@ ConfigurableJoint:
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 0
+  m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 1
   m_BreakForce: 3
   m_BreakTorque: Infinity
@@ -1720,6 +1775,9 @@ MonoBehaviour:
   type: 2
   fuelValue: 30
   OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
     m_PersistentCalls:
       m_Calls: []
 --- !u!54 &1226715600
@@ -2800,6 +2858,7 @@ GameObject:
   - component: {fileID: 1620974698}
   - component: {fileID: 1620974697}
   - component: {fileID: 1620974696}
+  - component: {fileID: 1620974701}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -2902,6 +2961,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1620974701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620974695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce772343d222ca4d84f22a7c4b93d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  fuelValue: 0
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1716781774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,6 +3064,9 @@ MonoBehaviour:
   type: 4
   fuelValue: 50
   OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1731418228
@@ -3286,6 +3368,7 @@ GameObject:
   - component: {fileID: 1982590940}
   - component: {fileID: 1982590939}
   - component: {fileID: 1982590938}
+  - component: {fileID: 1982590941}
   m_Layer: 0
   m_Name: KYB
   m_TagString: Untagged
@@ -3338,6 +3421,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982590941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982590937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce772343d222ca4d84f22a7c4b93d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  fuelValue: 0
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8822797381403738836
 PrefabInstance:
   m_ObjectHideFlags: 0
