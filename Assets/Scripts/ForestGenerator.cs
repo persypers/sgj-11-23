@@ -18,7 +18,6 @@ public class ForestGenerator : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Starting spawning trees.");
         SpawnTrees();
     }
 
@@ -30,30 +29,13 @@ public class ForestGenerator : MonoBehaviour
         float maxY = float.MinValue;
         int layerMask = 1 << 10;
 
-        if (Physics.Raycast(ray, out hit, layerMask))
+        if (Physics.Raycast(ray, out hit,  Mathf.Infinity, layerMask))
         {
-            Debug.Log("Floor found.");
             maxY = hit.point.y;
 
-
-            //Debug.Log("Floor found.");
-            //if (hit.collider.gameObject == floorPrefab)
-            //{
-            //     Debug.Log("!!!.");
-            //     if (hit.point.y > maxY)
-            //     {
-                    
-            //     }
-            // }
-            // else
-            // {
-            //     Debug.Log("Found something.");
-            //     maxY = 0.0f;
-            // }
         }
         else
         {
-            Debug.Log("No floor.");
             maxY = 0.0f;
         }
 
@@ -89,8 +71,6 @@ public class ForestGenerator : MonoBehaviour
             // Instantiate the tree with the random position, rotation, and scale
             GameObject tree = Instantiate(treePrefab, spawnPosition, spawnRotation);
             tree.transform.localScale = scale; // Apply the random scale
-
-            Debug.Log("Tree created.");
 
         }
     }
