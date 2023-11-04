@@ -1,0 +1,152 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Fancy;
+
+
+public class SceneryManager : MonoBehaviour
+{
+
+    public List<SceneryObjectGenerator> ObjectGeneratorsList;
+    public List<ObjectPool> groundPools;
+    
+//Ренж того, насколько загруженным/пустым может быть тайл
+    public float min_weight;
+    public float max_weight;
+
+    private List<GameObject> GroundTiles;
+
+//Для того, чтобы определять, какие объекты кидаем
+    private Dictionary<(float, float), SceneryObjectGenerator> randomRanges;
+    private Dictionary<SceneryObjectGenerator, float> objectWeights;
+
+
+    private float max_random_range;
+
+    void ScatterSceneryObjects(GameObject groundObject)
+    {
+        //Генерим случайный вес тайла, чтобы понять, сколько всего по нему рассыпать
+        float curr_weight = Random.Range(min_weight, max_weight);
+        Transform groundTransform = groundObject.transform;
+        
+        //Пока есть свободный вес, рандомим, какой айтем закинуть
+        while (curr_weight > 0)
+        {
+            float rand_range = Random.Range(0, max_random_range);
+            foreach (var kvp in randomRanges)
+            {
+                if ((kvp.Key.Item1 < rand_range) && (rand_range < kvp.Key.Item2))
+                {
+                    //Генерим объект и привязываем его к земле
+                    GameObject sceneryObject = kvp.Value.SpawnObject(groundObject);
+                    sceneryObject.transform.SetParent(groundTransform);
+                    curr_weight -= kvp.Value.weight;
+
+                    break;
+                }
+            }
+        }
+    }
+
+    //Создание только ландшафта исходя из списка пулов, из которых мы можем рандомного его потянуть
+    public GameObject GenerateGroundTile(float x, float y, float z)
+    {
+        Vector3 spawnPosition = new Vector3(x, y, z);
+        int ground_num = Random.Range(0, groundPools.Count);
+        GameObject groundObject = groundPools[ground_num].Get();
+
+        int LayerTerrain = LayerMask.NameToLayer("Terrain");
+        groundObject.transform.position = spawnPosition;
+        groundObject.layer = LayerTerrain;
+
+        groundObject.SetActive(true);
+        return groundObject;
+    }
+
+    //Добавить тайл в начало дороги
+    void CreateNewTileAtStart()
+    {
+        Bounds firstTileBounds = GroundTiles[0].GetComponent<Collider>().bounds;
+
+        float x = firstTileBounds.center.x;
+        float y = GroundTiles[0].transform.position.y;
+        float z = firstTileBounds.min.z - firstTileBounds.extents.z;
+
+        GameObject groundObject = GenerateGroundTile(x, y, z);
+        ScatterSceneryObjects(groundObject);
+        GroundTiles.Insert(0, groundObject);
+    }
+
+    void GenerateNewTiles(int n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            CreateNewTileAtStart();
+        } 
+    }
+
+    //Деактивация тайла и всех объектов, которые были на нем рассыпаны
+    void DeleteLastTile()
+    {
+        GameObject tile = GroundTiles[GroundTiles.Count - 1];
+        foreach(Transform child in tile.transform)
+        {
+            child.gameObject.SetActive(false);
+            child.parent = null;
+        }
+        tile.SetActive(false);
+        GroundTiles.RemoveAt(GroundTiles.Count - 1);
+    }
+
+    void DeleteLastTiles(int n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            DeleteLastTile();
+        } 
+    }
+
+    IEnumerator test()
+    {
+        CreateNewTileAtStart();
+        CreateNewTileAtStart();
+        yield return new WaitForSecondsRealtime(4);
+        CreateNewTileAtStart();
+        yield return new WaitForSecondsRealtime(4);
+        DeleteLastTile();
+        yield return new WaitForSecondsRealtime(4);
+        CreateNewTileAtStart();
+        yield return new WaitForSecondsRealtime(4);
+        DeleteLastTile();
+    }
+
+    void Start()
+    {
+        GroundTiles = new List<GameObject>();
+        randomRanges = new Dictionary<(float, float), SceneryObjectGenerator>();
+        objectWeights = new Dictionary<SceneryObjectGenerator, float>();
+        
+        //Сетап рандомных отрезков для того, чтобы чаще спавнить айтемы с маленькими весами
+        float curr_max_rand = 0;
+        for (int i = 0; i < ObjectGeneratorsList.Count; i++)
+        {
+            float old_max_rand = curr_max_rand;
+            curr_max_rand = old_max_rand + 1/ObjectGeneratorsList[i].weight;
+            randomRanges.Add((old_max_rand, curr_max_rand), ObjectGeneratorsList[i]);
+        }
+        max_random_range = curr_max_rand;
+
+        //Генерим начальный тайл, чтобы потом от него считать положения других тайлов
+        GameObject groundObject = GenerateGroundTile(0, 0, 0);
+        ScatterSceneryObjects(groundObject);
+        GroundTiles.Add(groundObject);
+        
+        StartCoroutine((test()));
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
