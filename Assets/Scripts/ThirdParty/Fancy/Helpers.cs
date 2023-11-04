@@ -141,6 +141,29 @@ public static class Helpers
 		}
 		return components[index];
 	}
+
+	public static T CopyComponent<T>(T original, GameObject destination) where T : Component
+	{
+		var type = original.GetType();
+		var copy = destination.AddComponent(type);
+		
+		while( type != typeof( Component ) )
+		{
+			foreach (var field in type.GetFields()) 
+			{
+				field.SetValue(copy, field.GetValue(original));
+			}
+			foreach (var field in type.GetProperties()) 
+			{
+				if( !field.CanWrite )
+					continue;
+				field.SetValue(copy, field.GetValue(original));
+			}
+			type = type.BaseType;
+		}
+
+		return copy as T;
+	}
 }
 
 }

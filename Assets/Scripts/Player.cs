@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using Fancy;
 using System.Net;
+using UnityEditor.ShaderGraph.Internal;
 
 namespace RigidFps
 {
@@ -14,7 +15,7 @@ namespace RigidFps
 		public Camera PlayerCamera;
 
 		public HandScript hand;
-		public LayerMask handLayermask;
+		public LayerMask handLayerMask;
 
 		[Tooltip("Audio source for footsteps, jump, etc...")]
 		public AudioSource AudioSource;
@@ -25,6 +26,8 @@ namespace RigidFps
 		[Header("Controls")] [Tooltip("Rotation speed for moving the camera")]
 		public float RotationSpeed = 200f;
 		public float handRaycastDistance = 1.0f;
+		public float interactDistance = 2.0f;
+		public LayerMask interactableLayerMask;
 
 		[Header("Audio")] [Tooltip("Amount of footstep sounds played when moving one meter")]
 		public float FootstepSfxFrequency = 1f;
@@ -233,15 +236,35 @@ namespace RigidFps
 			{
 				if( hand.IsEmpty )
 				{
-					if( Physics.Raycast( transform.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ),
-						PlayerCamera.transform.forward, out RaycastHit hit, handRaycastDistance, handLayermask ) )
+					if( Physics.Raycast(
+						PlayerCamera.transform.position, //transform.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ),
+						PlayerCamera.transform.forward, out RaycastHit hit, handRaycastDistance, handLayerMask ) )
 					{
-						Debug.Log(" hIT! " + hit.collider.gameObject.name );
-						hand.PickUp( hit.rigidbody );
+						float armDistance = Vector3.Distance( transform.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ), hit.rigidbody.transform.position );
+						Debug.Log("PickUp hit: " + hit.collider.gameObject.name );
+						hand.PickUp( hit.rigidbody, armDistance );
+
+						var item = hit.rigidbody.GetComponent< Item >();
+						if( item )
+							item.OnPickUp.Invoke();
 					}
 				} else 
 				{
 					var item = hand.Drop();
+				}
+			}
+
+			if( inputHandler.GetReloadButtonDown() )
+			{
+				if( Physics.Raycast( PlayerCamera.transform.position,
+					PlayerCamera.transform.forward, out RaycastHit hit, handRaycastDistance, interactableLayerMask ) )
+				{
+					Debug.Log("Interact hit: " + hit.collider.gameObject.name );
+					var interactable = hit.collider.GetComponent< Interactable >();
+					if( interactable != null )
+					{
+						interactable.DoAction( gameObject );
+					}
 				}
 			}
 		}

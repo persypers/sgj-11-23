@@ -430,13 +430,17 @@ MonoBehaviour:
   rotationRoot: {fileID: 7770356584156379712}
   PlayerCamera: {fileID: 5116741457848260564}
   hand: {fileID: 4361840217296619781}
-  handLayermask:
+  handLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
   AudioSource: {fileID: 1272397862697293493}
   KillHeight: -50
   RotationSpeed: 200
-  handRaycastDistance: 1
+  handRaycastDistance: 2
+  interactDistance: 2
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 257
   FootstepSfxFrequency: 0.3
   FootstepSfx: {fileID: 8300000, guid: f404f8d3c2a4b4f48989fb1120e78fb8, type: 3}
   JumpSfx: {fileID: 8300000, guid: 13b59a14d34add64d84a623867546ff1, type: 3}
@@ -1005,8 +1009,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linealSpringBase: 100
   slerpSpringBase: 3000
+  minScaledMass: 9
+  maxScaledMass: 60
+  massScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0012207
+      inSlope: -2.743628
+      outSlope: -2.743628
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13059516
+    - serializedVersion: 3
+      time: 1
+      value: 0.004714966
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   armJoint: {fileID: 9056613952308352102}
   gimbalJoint: {fileID: 8488331356379064877}
+  gimbalJointPrefab: {fileID: 0}
   itemDummy: {fileID: 996728199}
 --- !u!153 &8488331356379064877
 ConfigurableJoint:
@@ -1098,8 +1129,8 @@ ConfigurableJoint:
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 1
   m_SwapBodies: 1
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
+  m_BreakForce: 3000
+  m_BreakTorque: 300
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1

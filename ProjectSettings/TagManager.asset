@@ -12,9 +12,9 @@ TagManager:
   - Water
   - UI
   - DontPickUp
-  - 
-  - 
-  - 
+  - ItemProximity
+  - Item
+  - Player
   - 
   - 
   - 

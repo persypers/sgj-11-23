@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,13 @@ public class HandScript : MonoBehaviour
 	public float linealSpringBase = 100f;
 	public float slerpSpringBase = 300f;
 
+	public float minScaledMass = 9.0f;
+	public float maxScaledMass = 60.0f;
+	public AnimationCurve massScaleCurve;
+
 	public ConfigurableJoint armJoint;
 	public ConfigurableJoint gimbalJoint;
+	public ConfigurableJoint gimbalJointPrefab;
 	public Rigidbody itemDummy;
 
 	GameObject item;
@@ -21,15 +27,21 @@ public class HandScript : MonoBehaviour
 
 	void Start()
 	{
+		var go = new GameObject( "GimbalJointPrefab" );
+		go.transform.parent = transform;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localRotation = Quaternion.identity;
+		go.SetActive( false );
+		gimbalJointPrefab = Fancy.Helpers.CopyComponent< ConfigurableJoint >( gimbalJoint, go );
+
 		itemDummy.transform.SetParent( null );
 		if( gimbalJoint.connectedBody != null && gimbalJoint.connectedBody != itemDummy )
-			PickUp( gimbalJoint.connectedBody );
+			PickUp( gimbalJoint.connectedBody, Mathf.Abs( armJoint.anchor.z ) );
 		else
 		{
 			itemDummy.transform.position = transform.position;
 			gimbalJoint.connectedBody = itemDummy;
 		}
-
 	}
 
 	void OnEnable()
@@ -38,7 +50,7 @@ public class HandScript : MonoBehaviour
 		UpdateSprings();
 	}
 
-	public void PickUp( Rigidbody body )
+	public void PickUp( Rigidbody body, float armDistance )
 	{
 		if( !IsEmpty )
 			return;
@@ -55,6 +67,10 @@ public class HandScript : MonoBehaviour
 		var euler = localRotation.eulerAngles;
 		var targetRotation = Quaternion.Euler( -euler.x, -euler.z, euler.y );
 
+		var targetPosition = armJoint.targetPosition;
+		targetPosition.y = Mathf.Clamp( -( armDistance - Mathf.Abs( armJoint.anchor.z ) ), -armJoint.linearLimit.limit, armJoint.linearLimit.limit );
+		armJoint.targetPosition = targetPosition;
+
 		cachedGravity = body.useGravity;
 		body.useGravity = false;
 		cachedInterpolationMode = body.interpolation;
@@ -62,6 +78,9 @@ public class HandScript : MonoBehaviour
 		gimbalJoint.connectedBody = body;
 
 		item = body.gameObject;
+		var offcenteredMass = body.GetComponent< OffcenteredMass >();
+		if( offcenteredMass != null )
+			offcenteredMass.enabled = false;
 
 		gimbalJoint.targetRotation = targetRotation;
 
@@ -79,6 +98,11 @@ public class HandScript : MonoBehaviour
 		var rb = item.GetComponent< Rigidbody >();
 		rb.useGravity = cachedGravity;
 		rb.interpolation = cachedInterpolationMode;
+
+		var offcenteredMass = item.GetComponent< OffcenteredMass >();
+		if( offcenteredMass != null )
+			offcenteredMass.enabled = true;
+
 		//gimbalJoint.connectedBody = null;
 		itemDummy.transform.position = transform.position;
 		gimbalJoint.connectedBody = itemDummy;
@@ -118,18 +142,33 @@ public class HandScript : MonoBehaviour
 		if( item != null )
 			mass += item.GetComponent< Rigidbody >().mass;
 
+		float k = 1.0f;
+
 		var drive = armJoint.xDrive;
-		drive.positionSpring = linealSpringBase * mass;
-		drive.positionDamper = 2.0f * mass * Mathf.Sqrt( linealSpringBase );
+		drive.positionSpring = linealSpringBase * k;
+		drive.positionDamper = 2.0f * k * Mathf.Sqrt( linealSpringBase );
 		armJoint.xDrive = drive;
 		armJoint.yDrive = drive;
 		armJoint.zDrive = drive;
 
 		drive = armJoint.slerpDrive;
-		drive.positionSpring = slerpSpringBase * mass;
-		drive.positionDamper = 2.0f * mass * Mathf.Sqrt( slerpSpringBase );
+		drive.positionSpring = slerpSpringBase * k;
+		drive.positionDamper = 2.0f * k * Mathf.Sqrt( slerpSpringBase );
 		armJoint.slerpDrive = drive;
-
 		gimbalJoint.slerpDrive = drive;
+
+		var massScale = massScaleCurve.Evaluate( Mathf.InverseLerp( minScaledMass, maxScaledMass, mass ) );
+		armJoint.massScale = mass * massScale;
+		gimbalJoint.massScale = mass * massScale;
+	}
+
+	void OnJointBreak(float breakForce)
+	{
+		if( item != null )
+		{
+			gimbalJoint = Fancy.Helpers.CopyComponent< ConfigurableJoint >( gimbalJointPrefab, gameObject );
+			Drop();
+		}
+		Debug.Log("Hand joint has just been broken!, force: " + breakForce);
 	}
 }
