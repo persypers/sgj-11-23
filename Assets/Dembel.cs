@@ -21,6 +21,7 @@ public class Dembel : MonoBehaviour
 		{
 			joint = Fancy.Helpers.CopyComponent( guitarJoint, item.gameObject );
 			item.OnPickUp.AddListener( DropGuitar );
+			item.OnItemJointBreak.AddListener( DropGuitar );
 			if( guitarCoro != null)
 				StopCoroutine( guitarCoro );
 			guitarCoro = StartCoroutine( GuitarCoroutine( item ) );
@@ -32,7 +33,9 @@ public class Dembel : MonoBehaviour
 		if( guitarCoro != null)
 			StopCoroutine( guitarCoro );
 		guitarSongSource.Stop();
-		joint.GetComponent< Item >().OnPickUp.RemoveListener( DropGuitar );
+		var item = joint.GetComponent< Item >();
+		item.OnPickUp.RemoveListener( DropGuitar );
+		item.OnItemJointBreak.RemoveListener( DropGuitar );
 		GameObject.Destroy( joint );
 	}
 
