@@ -182,6 +182,7 @@ namespace RigidFps
 				//PlayerCamera.transform.localEulerAngles = new Vector3(cameraVerticalAngle, bearing, 0);
 				PlayerCamera.transform.localEulerAngles = new Vector3(cameraVerticalAngle, 0.0f, 0);
 
+/*
 				PlayerCamera.transform.position = Vector3.SmoothDamp(
 					PlayerCamera.transform.position,
 					rotationRoot.position + new Vector3( 0.0f, cameraHeight, 0.0f),
@@ -190,6 +191,7 @@ namespace RigidFps
 					Mathf.Infinity,
 					dt
 				);
+*/
 			}
 
 			if( hand != null )
@@ -273,7 +275,7 @@ namespace RigidFps
 
 		public void Warp( Vector3 move )
 		{
-			PlayerCamera.transform.position += move;
+			//PlayerCamera.transform.position += move;
 			hand.GetComponent< Rigidbody >().position += move;
 			hand.transform.position += move;
 			hand.itemDummy.position += move;

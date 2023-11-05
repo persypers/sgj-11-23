@@ -10,6 +10,8 @@ public class HandScript : MonoBehaviour
 
 	public float minScaledMass = 9.0f;
 	public float maxScaledMass = 60.0f;
+	public float maxDriveForce = 200.0f;
+	public float maxSlerpFroce = 200.0f;
 	public AnimationCurve massScaleCurve;
 
 	public ConfigurableJoint armJoint;
@@ -138,6 +140,7 @@ public class HandScript : MonoBehaviour
 		var drive = armJoint.xDrive;
 		drive.positionSpring = linealSpringBase * k;
 		drive.positionDamper = 2.0f * k * Mathf.Sqrt( linealSpringBase );
+		drive.maximumForce = maxDriveForce;
 		armJoint.xDrive = drive;
 		armJoint.yDrive = drive;
 		armJoint.zDrive = drive;
@@ -145,6 +148,7 @@ public class HandScript : MonoBehaviour
 		drive = armJoint.slerpDrive;
 		drive.positionSpring = slerpSpringBase * k;
 		drive.positionDamper = 2.0f * k * Mathf.Sqrt( slerpSpringBase );
+		drive.maximumForce = maxSlerpFroce;
 		armJoint.slerpDrive = drive;
 		gimbalJoint.slerpDrive = drive;
 
