@@ -1,25 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8287289955839002155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD Studio/TRAIN/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638348344315711928
-  FileSizes:
-  - Name: Desktop
-    Value: 1000
-  Exists: 1
 --- !u!114 &-8236407544169595824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +43,7 @@ MonoBehaviour:
     Data3: -362844012
     Data4: 1695855484
   Banks:
-  - {fileID: 7582308576585187697}
+  - {fileID: -7800707195978685690}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -72,6 +52,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10889
+--- !u!114 &-7800707195978685690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/Resources/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638348673595321777
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7176903793261937478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +113,7 @@ MonoBehaviour:
     Data3: -2108815206
     Data4: -71320791
   Banks:
-  - {fileID: 7582308576585187697}
+  - {fileID: -7800707195978685690}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -124,6 +122,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-4315829324625036042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/Resources/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638348673595321777
+  FileSizes:
+  - Name: 
+    Value: 1000
+  Exists: 1
 --- !u!114 &-1146900798904070253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,8 +179,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -8287289955839002155}
-  - {fileID: 7582308576585187697}
+  - {fileID: -4315829324625036042}
+  - {fileID: -7800707195978685690}
   EditorEvents:
   - {fileID: -6775579531517909617}
   - {fileID: 7284839593595000451}
@@ -172,10 +190,10 @@ MonoBehaviour:
   - {fileID: 5569105618067143326}
   - {fileID: -7176903793261937478}
   MasterBanks:
-  - {fileID: 7582308576585187697}
+  - {fileID: -7800707195978685690}
   StringsBanks:
-  - {fileID: -8287289955839002155}
-  cacheTime: 638348344315711928
+  - {fileID: -4315829324625036042}
+  cacheTime: 638348673595321777
   cacheVersion: 131608
 --- !u!114 &4832146716685260547
 MonoBehaviour:
@@ -244,7 +262,7 @@ MonoBehaviour:
     Data3: -1088352103
     Data4: 671317333
   Banks:
-  - {fileID: 7582308576585187697}
+  - {fileID: -7800707195978685690}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -271,7 +289,7 @@ MonoBehaviour:
     Data3: 970459268
     Data4: -980901801
   Banks:
-  - {fileID: 7582308576585187697}
+  - {fileID: -7800707195978685690}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -280,23 +298,3 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &7582308576585187697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD Studio/TRAIN/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638348344315701923
-  FileSizes:
-  - Name: Desktop
-    Value: 332992
-  Exists: 1
