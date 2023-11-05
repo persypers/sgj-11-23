@@ -52,10 +52,11 @@ public class SceneryObjectGenerator : MonoBehaviour
     public GameObject SpawnObject(GameObject groundObject)
     {
 
-        Bounds bounds = groundObject.GetComponent<Collider>().bounds;
-        float z1 = bounds.min.z;
-        float z2 = bounds.max.z;
-        float road_center_x = bounds.center.x;
+        //Bounds bounds = groundObject.GetComponent<Collider>().bounds;
+        float z1 = groundObject.transform.position.z - 100;
+        float z2 = groundObject.transform.position.z + 100;
+        //Debug.Log("z1 = " + z1 + " z2 = " + z2);
+        float road_center_x = groundObject.transform.position.x;
 
         //Get coordinates. Todo do it better
         float coorZ = Random.Range(z1, z2);
