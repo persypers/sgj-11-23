@@ -23,6 +23,12 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 		body = GetComponent< Rigidbody >();
 	}
 
+	public void IControlTheTrain( bool enabled )
+	{
+		go = enabled;
+		brakes = !enabled;
+	}
+
 	void FixedUpdate()
 	{
 		float dt = Time.fixedDeltaTime;

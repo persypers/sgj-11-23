@@ -47,6 +47,10 @@ public class World : Fancy.MonoSingleton< World >
 			sceneryManager.transform.position += move;
 
 			Player.Instance.Warp( move );
+
+			Physics.autoSimulation = false;
+			Physics.Simulate( Time.fixedDeltaTime );
+			Physics.autoSimulation = true;
 		}
 
 		for( int i = 0; i < WarpTiles; i++ )
