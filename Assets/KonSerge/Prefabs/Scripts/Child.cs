@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Child : MonoBehaviour
+public class Child : GrabItemBehaviour
 {
-    public ConfigurableJoint ballJoint;
-    public ItemTrigger ballTrigger;
-    ConfigurableJoint joint;
     public float ballThrowDelay = 3;
     public float throwForce = 30;
     private bool hasBall = false;
-    void Start()
+
+    public override IEnumerator DoBehaviour(Item item)
     {
-        ballTrigger.actionWithItem.AddListener(PickBall);
+        yield return base.DoBehaviour(item);
+        hasBall = true;
+        StartCoroutine(AsyncThrowBall(item));
+    }
+    public override void OnBehaviourCanceled(Item item)
+    {
+        hasBall = false;
     }
 
     void Update()
@@ -20,16 +24,6 @@ public class Child : MonoBehaviour
 
     }
 
-    void PickBall(Item ball)
-    {
-        if (!joint && !hasBall)
-        {
-            joint = Fancy.Helpers.CopyComponent(ballJoint, ball.gameObject);
-            hasBall = true;
-            ball.OnPickUp.AddListener(DropBall);
-            StartCoroutine(AsyncThrowBall(ball));
-        }
-    }
     private IEnumerator AsyncThrowBall(Item ball)
     {
         yield return new WaitForSeconds(ballThrowDelay);
@@ -37,16 +31,10 @@ public class Child : MonoBehaviour
         {
             Vector3 throwDirection = transform.forward + new Vector3(0, 0.5f, 0);
             Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+            DropItem(ball);
             ballRigidbody.AddForce(throwDirection * throwForce, ForceMode.Impulse);
+            hasBall = false;
             Debug.Log("Ball thrown");
-            DropBall(ball);
         }
-    }
-
-    void DropBall(Item ball)
-    {
-        joint.GetComponent<Item>().OnPickUp.RemoveListener(DropBall);
-        GameObject.Destroy(joint);
-        hasBall = false;
     }
 }

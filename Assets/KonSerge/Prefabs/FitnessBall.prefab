@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce772343d222ca4d84f22a7c4b93d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 7
+  type: 8
   fuelValue: 5
   pickupAudio: {fileID: 0}
   dropAudio: {fileID: 0}
