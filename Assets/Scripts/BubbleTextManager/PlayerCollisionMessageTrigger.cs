@@ -2,34 +2,40 @@ using UnityEngine;
 using SpeechText;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
-public class TriggerTest : MonoBehaviour
+public class PlayerCollisionMessageTrigger : MonoBehaviour
 {
-    public string message = "Sample Text";
     public TextData textDataAsset;
-
     public string currentState = "Default";
-    private BubbleTextManager bubbleTextManager;
+    public GameObject targetGameObject;
+    public float showDuration = 2;
+    public GameObject objectToTrigger; // Указание объекта, который запустит действие
+    private bool isReadyToTalk = true;
 
-    private void Start()
+    private void OnTriggerStay(Collider other)
     {
-        bubbleTextManager = GameObject.Find("BubbleTextManager").GetComponent<BubbleTextManager>();
-
-        if (bubbleTextManager == null)
+        if (isReadyToTalk && other.gameObject == objectToTrigger)
         {
-            Debug.Log("NO BUBBLE");
+            var textLines = textDataAsset.GetTextLinesByStateName(currentState);
+            if (BubbleTextManager.Instance != null)
+            {
+                BubbleTextManager.Instance.OnAddMessageToQueue(
+                    new BubbleTextMessage { messageText = textLines[Random.Range(0, textLines.Count)].text, showDuration = showDuration, target = targetGameObject }
+                    );
+                StartCoroutine(AsyncWaitCooldown(textDataAsset.messageShowCooldown));
+            }
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private IEnumerator AsyncWaitCooldown(float cooldown)
     {
-        var textLines = textDataAsset.GetTextLinesByStateName(currentState);
-        if (bubbleTextManager != null)
-        {
-            bubbleTextManager.OnAddMessageToQueue(
-                new BubbleTextMessage { messageText = textLines[Random.Range(0, textLines.Count)].text, showDuration = 2, target = gameObject }
-                );
-        }
+        isReadyToTalk = false;
+        yield return new WaitForSeconds(cooldown);
+        isReadyToTalk = true;
+    }
+    private void Start()
+    {
     }
 
     void OnTriggerExit(Collider other)

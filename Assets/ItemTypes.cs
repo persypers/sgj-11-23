@@ -7,6 +7,7 @@ public enum ItemTypes
 	Person = 4,
 	VinylPlayer = 5,
 	Vinyl = 6,
+	Magazine = 7,
 
 	Total
 }

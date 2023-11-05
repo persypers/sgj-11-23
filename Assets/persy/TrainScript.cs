@@ -17,6 +17,7 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 	Rigidbody body;
 
 	public Vector3 currentVelocity => body.velocity;
+	public float currentSpeed => currentVelocity.magnitude;
 
 	void Start()
 	{
@@ -44,9 +45,10 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 		var horizontalAccel = velDiff.normalized * maxAccelMagnitude;
 
 		body.AddForce( horizontalAccel, ForceMode.Acceleration );
-
-
 	}
 
-	
+	void Update()
+	{
+		//Fmod.SetParameter( "skorost" ) = currentSpeed / maxSpeed;
+	}
 }
