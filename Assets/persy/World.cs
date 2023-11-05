@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class World : Fancy.MonoSingleton< World >
 {
-	public float WardTriggerDistance = 500.0f;
+	public float firstTileShift = -100.0f;
+	public float WarpTriggerDistance = 500.0f;
 	public int TileSize = 200;
 	public int WarpTiles = 3;
 	public float physicsSearchHeight;
 	public LayerMask warpLayers;
 	public SceneryManager sceneryManager;
+	
+	public int onTile;
 
 	public void WarpToNextTile()
 	{
@@ -44,24 +47,27 @@ public class World : Fancy.MonoSingleton< World >
 				}
 			}
 
-			sceneryManager.transform.position += move;
 
 			Player.Instance.Warp( move );
+			sceneryManager.Warp(move);
 		}
-
-		for( int i = 0; i < WarpTiles; i++ )
-		{
-			sceneryManager.DeleteLastTile();
-			sceneryManager.CreateNewTileAtStart();
-		}
-		//sceneryManager.DeleteLastTile();
 	}
 
 	void FixedUpdate()
 	{
-		if( TrainScript.Instance.transform.position.z > WardTriggerDistance )
+		if( TrainScript.Instance.transform.position.z > WarpTriggerDistance )
 		{
+			onTile -= WarpTiles;
 			WarpToNextTile();
 		}
+
+		if( TrainScript.Instance.transform.position.z > TileSize * (onTile+2) + firstTileShift)
+		{
+			onTile+= 1;
+			sceneryManager.DeleteLastTile();
+			sceneryManager.CreateNewTileAtStart();
+			Debug.Log("Adding Tile");
+		}
+
 	}
 }

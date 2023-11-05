@@ -5,7 +5,6 @@ using UnityEngine;
 public class TileData : MonoBehaviour
 {
 	public static Vector2 tileSize = new Vector2( 60.0f, 60.0f );
-	public static float Height = 200.0f;
 	// понадобится позже
 	Vector2Int tileCoordinates;
 	// просто включать и выключать объекты быстрее, чем менять их родителя
