@@ -19,7 +19,7 @@ public struct BubbleTextMessage
     }
 }
 
-public class BubbleTextManager : MonoBehaviour
+public class BubbleTextManager : Fancy.MonoSingleton<BubbleTextManager>
 {
     public ObjectPool messagesPool;
     private List<BubbleTextMessage> messageQueue = new List<BubbleTextMessage>();
