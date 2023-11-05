@@ -24,4 +24,13 @@ public class TileData : MonoBehaviour
 		}
 		children.Clear();
 	}
+
+	public void Warp( Vector3 move )
+	{
+		for( var i = 0; i < children.Count; i++ )
+		{
+			children[i].transform.position += move;
+		}
+		transform.position += move;
+	}
 }
