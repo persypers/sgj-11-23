@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32528
+  m_Name: pb_Mesh26194
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3044,7 +3044,6 @@ GameObject:
   - component: {fileID: 1620974697}
   - component: {fileID: 1620974696}
   - component: {fileID: 1620974701}
-  - component: {fileID: 1620974702}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -3176,38 +3175,6 @@ MonoBehaviour:
   OnItemJointBreak:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1620974702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620974695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ea452eaa41378468127fbede55dd39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: Sample Text
---- !u!1 &1642132961 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8822797381422327591, guid: 5cfbb87c06d4b2e43a974d77fbb87638,
-    type: 3}
-  m_PrefabInstance: {fileID: 8822797381403738836}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1642132969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642132961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ea452eaa41378468127fbede55dd39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: Sample Text
 --- !u!1 &1716781774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,7 +3238,6 @@ GameObject:
   - component: {fileID: 1731418227}
   - component: {fileID: 1731418234}
   - component: {fileID: 1731418236}
-  - component: {fileID: 1731418237}
   m_Layer: 8
   m_Name: Dembel
   m_TagString: Untagged
@@ -3628,19 +3594,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1731418237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731418226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ea452eaa41378468127fbede55dd39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: Sample Text
 --- !u!1 &1941482154
 GameObject:
   m_ObjectHideFlags: 0
