@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using FMOD.Studio;
 
 public class TrainScript : Fancy.MonoSingleton< TrainScript >
 {
@@ -50,5 +51,10 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 	void Update()
 	{
 		//Fmod.SetParameter( "skorost" ) = currentSpeed / maxSpeed;
+		// Calculate the normalized speed (0 to 1) of the train
+    	float normalizedSpeed = currentSpeed / maxSpeed;
+
+    	// Set the FMOD global parameter "SPEED" to the normalized speed value
+    	FMODUnity.RuntimeManager.StudioSystem.setParameterByName("SPEED", normalizedSpeed);
 	}
 }

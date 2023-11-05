@@ -54,13 +54,16 @@ namespace RigidFps
 		public bool HasJumpedThisFrame { get; private set; }
 		public bool IsDead { get; private set; }
 		public float RotationMultiplier
+
 		{
 			get
 			{
 				return 1f;
 			}
 		}
-
+		public delegate void FootstepSoundEvent(Vector3 position);
+		//public static event FootstepSoundEvent OnFootstepSound;
+		
 		PlayerInputHandler inputHandler;
 		new CapsuleCollider collider;
 		new Rigidbody rigidbody;
@@ -107,6 +110,11 @@ namespace RigidFps
 			{
 				// land SFX
 				//AudioSource.PlayOneShot(LandSfx);
+				FMODFootstepEmitter footstepEmitter = GetComponent<FMODFootstepEmitter>();
+            	if (footstepEmitter != null)
+            	{
+                	footstepEmitter.NotifyLanded();
+            	}
 			}
 
 			if( jumpTimeout > 0.0f )
@@ -135,11 +143,12 @@ namespace RigidFps
 			// converts move input to a worldspace vector based on our character's transform orientation
 			worldspaceMoveInput = rotationRoot.TransformVector(inputHandler.GetMoveInput());
 		}
-
-		void FixedUpdate()
-		{
-			HandleCharacterMovement( Time.fixedDeltaTime );
-		}
+		
+		
+        void FixedUpdate()
+        {
+            HandleCharacterMovement(Time.fixedDeltaTime);
+        }
 
 		void LateUpdate()
 		{
