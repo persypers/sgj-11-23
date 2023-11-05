@@ -14,6 +14,8 @@ public class SceneryManager : MonoBehaviour
     public float min_weight;
     public float max_weight;
 
+    public GameObject startTile;
+    public bool playTestCoro = true;
     private List<GameObject> GroundTiles;
 
 //Для того, чтобы определять, какие объекты кидаем
@@ -23,7 +25,7 @@ public class SceneryManager : MonoBehaviour
 
     private float max_random_range;
 
-    void ScatterSceneryObjects(GameObject groundObject)
+    void ScatterSceneryObjects(GameObject groundObject, TileData tileData)
     {
         //Генерим случайный вес тайла, чтобы понять, сколько всего по нему рассыпать
         float curr_weight = Random.Range(min_weight, max_weight);
@@ -39,7 +41,7 @@ public class SceneryManager : MonoBehaviour
                 {
                     //Генерим объект и привязываем его к земле
                     GameObject sceneryObject = kvp.Value.SpawnObject(groundObject);
-                    sceneryObject.transform.SetParent(groundTransform);
+                    tileData.Add( sceneryObject );
                     curr_weight -= kvp.Value.weight;
 
                     break;
@@ -64,17 +66,23 @@ public class SceneryManager : MonoBehaviour
     }
 
     //Добавить тайл в начало дороги
-    void CreateNewTileAtStart()
+    public void CreateNewTileAtStart()
     {
         Bounds firstTileBounds = GroundTiles[0].GetComponent<Collider>().bounds;
 
         float x = firstTileBounds.center.x;
         float y = GroundTiles[0].transform.position.y;
-        float z = firstTileBounds.min.z - firstTileBounds.extents.z;
+        float z = firstTileBounds.max.z + firstTileBounds.extents.z;
 
+        GroundTiles.Insert(0, CreateTileAt( x, y, z ) );
+    }
+
+    GameObject CreateTileAt( float x, float y, float z )
+    {
         GameObject groundObject = GenerateGroundTile(x, y, z);
-        ScatterSceneryObjects(groundObject);
-        GroundTiles.Insert(0, groundObject);
+        var tileData = groundObject.GetComponent<TileData>();
+        ScatterSceneryObjects(groundObject, tileData);
+        return groundObject;
     }
 
     void GenerateNewTiles(int n)
@@ -89,12 +97,10 @@ public class SceneryManager : MonoBehaviour
     void DeleteLastTile()
     {
         GameObject tile = GroundTiles[GroundTiles.Count - 1];
-        foreach(Transform child in tile.transform)
-        {
-            child.gameObject.SetActive(false);
-            child.parent = null;
-        }
-        tile.SetActive(false);
+        if( tile == startTile )
+            GameObject.Destroy( tile );
+        else
+            tile.SetActive(false);
         GroundTiles.RemoveAt(GroundTiles.Count - 1);
     }
 
@@ -136,12 +142,19 @@ public class SceneryManager : MonoBehaviour
         }
         max_random_range = curr_max_rand;
 
-        //Генерим начальный тайл, чтобы потом от него считать положения других тайлов
-        GameObject groundObject = GenerateGroundTile(0, 0, 0);
-        ScatterSceneryObjects(groundObject);
-        GroundTiles.Add(groundObject);
+        if( startTile )
+        {
+            GroundTiles.Add( startTile );
+        }
+        else
+            GroundTiles.Add( CreateTileAt( 0, 0, 0 ) );
         
-        StartCoroutine((test()));
+        if( playTestCoro )
+            StartCoroutine((test()));
+        else
+        {
+            CreateNewTileAtStart();
+        }
     }
 
     // Update is called once per frame

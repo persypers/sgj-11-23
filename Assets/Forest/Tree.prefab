@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4907086819356603375}
   - component: {fileID: 2920786098255525876}
   - component: {fileID: 3762312350388398404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4986998078658749708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 1203791919636682955}
   - component: {fileID: 923995506084472316}
   - component: {fileID: 6911843070061985744}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
