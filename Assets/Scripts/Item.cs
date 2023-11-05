@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +24,8 @@ public class Item : MonoBehaviour
 
 	bool cachedGravity;
 	RigidbodyInterpolation cachedInterpolationMode;
+	CollisionDetectionMode cachedCollisionDecetectionMode;
+	
 
 	public void PickedUp()
 	{
@@ -32,6 +35,7 @@ public class Item : MonoBehaviour
 		cachedInterpolationMode = body.interpolation;
 		body.useGravity = false;
 		body.interpolation = RigidbodyInterpolation.Interpolate;
+		body.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
 		if( pickupAudio != null )
 		{
@@ -56,6 +60,13 @@ public class Item : MonoBehaviour
 		}
 
 		OnDrop.Invoke( this );
+	}
+
+	IEnumerator RestoreCollisionModeAfterTimeout()
+	{
+		yield return new WaitForSeconds( 3.0f );
+		if( !IsHeld )
+			GetComponent< Rigidbody >().collisionDetectionMode = cachedCollisionDecetectionMode;
 	}
 
 	void OnJointBreak(float breakForce)

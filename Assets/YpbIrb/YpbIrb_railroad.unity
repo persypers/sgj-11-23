@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -754,7 +754,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2411818
+  m_Name: pb_Mesh-451738
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1087,8 +1087,8 @@ MonoBehaviour:
   - {fileID: 806030299}
   - {fileID: 346491638}
   - {fileID: 1714645833}
-  min_weight: 20
-  max_weight: 40
+  min_weight: 10
+  max_weight: 30
   startTile: {fileID: 1239030104}
   playTestCoro: 0
   GroundTiles: []
@@ -1116,14 +1116,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00eb561c6ee2ed84195b1684967e0d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WardTriggerDistance: 100
+  firstTileShift: -100
+  WarpTriggerDistance: 600
   TileSize: 200
-  WarpTiles: 1
+  WarpTiles: 4
   physicsSearchHeight: 64
   warpLayers:
     serializedVersion: 2
     m_Bits: 11009
   sceneryManager: {fileID: 987203510}
+  onTile: 1
 --- !u!1 &1001741103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,6 +3214,6 @@ MonoBehaviour:
   accelerationl: 5
   brakeDeceleration: 12
   noFuelDeceleration: 0.1
-  go: 0
+  go: 1
   hasFuel: 1
   brakes: 0

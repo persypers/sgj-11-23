@@ -50,6 +50,10 @@ public class World : Fancy.MonoSingleton< World >
 
 			Player.Instance.Warp( move );
 			sceneryManager.Warp(move);
+
+			Physics.autoSimulation = false;
+			Physics.Simulate( Time.fixedDeltaTime );
+			Physics.autoSimulation = true;
 		}
 	}
 
@@ -57,6 +61,7 @@ public class World : Fancy.MonoSingleton< World >
 	{
 		if( TrainScript.Instance.transform.position.z > WarpTriggerDistance )
 		{
+			Debug.Log("Warping");
 			onTile -= WarpTiles;
 			WarpToNextTile();
 		}

@@ -86,7 +86,7 @@ namespace RigidFps
 
 			handRaycastHeight = hand.transform.localPosition.y;
 
-			PlayerCamera.transform.parent = null;
+			//PlayerCamera.transform.parent = null;
 			hand.transform.parent = null;
 			//hand.gameObject.SetActive( !hand.IsEmpty );
 		}
@@ -179,8 +179,10 @@ namespace RigidFps
 				cameraVerticalAngle = Mathf.Clamp(cameraVerticalAngle, -89f, 89f);
 
 				// apply the vertical angle as a local rotation to the camera transform along its right axis (makes it pivot up and down)
-				PlayerCamera.transform.localEulerAngles = new Vector3(cameraVerticalAngle, bearing, 0);
+				//PlayerCamera.transform.localEulerAngles = new Vector3(cameraVerticalAngle, bearing, 0);
+				PlayerCamera.transform.localEulerAngles = new Vector3(cameraVerticalAngle, 0.0f, 0);
 
+/*
 				PlayerCamera.transform.position = Vector3.SmoothDamp(
 					PlayerCamera.transform.position,
 					rotationRoot.position + new Vector3( 0.0f, cameraHeight, 0.0f),
@@ -189,6 +191,7 @@ namespace RigidFps
 					Mathf.Infinity,
 					dt
 				);
+*/
 			}
 
 			if( hand != null )
@@ -237,11 +240,13 @@ namespace RigidFps
 			{
 				if( hand.IsEmpty )
 				{
+
+					Vector3 origin = rigidbody.position + ( PlayerCamera.transform.position - transform.position );
 					if( Physics.Raycast(
-						PlayerCamera.transform.position, //transform.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ),
+						origin, //transform.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ),
 						PlayerCamera.transform.forward, out RaycastHit hit, handRaycastDistance, handLayerMask ) )
 					{
-						float armDistance = Vector3.Distance( transform.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ), hit.rigidbody.transform.position );
+						float armDistance = Vector3.Distance( rigidbody.position + new Vector3( 0.0f, handRaycastHeight, 0.0f ), hit.rigidbody.transform.position );
 						Debug.Log("PickUp hit: " + hit.rigidbody.gameObject.name );
 						var item = hit.rigidbody.GetComponent< Item >();
 						if( item != null )
@@ -270,7 +275,9 @@ namespace RigidFps
 
 		public void Warp( Vector3 move )
 		{
-			PlayerCamera.transform.position += move;
+			//PlayerCamera.transform.position += move;
+			hand.GetComponent< Rigidbody >().position += move;
+			hand.transform.position += move;
 			hand.itemDummy.position += move;
 			hand.itemDummy.transform.position += move;
 		}
