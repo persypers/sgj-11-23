@@ -8,12 +8,9 @@ public class PlayerCollisionMessageTrigger : MonoBehaviour
 {
     public TextData textDataAsset;
     public string currentState = "Default";
-    public BubbleTextManager bubbleTextManager;
-
     public GameObject targetGameObject;
-
+    public float showDuration = 2;
     public GameObject objectToTrigger; // Указание объекта, который запустит действие
-
     private bool isReadyToTalk = true;
 
     private void OnTriggerStay(Collider other)
@@ -21,10 +18,10 @@ public class PlayerCollisionMessageTrigger : MonoBehaviour
         if (isReadyToTalk && other.gameObject == objectToTrigger)
         {
             var textLines = textDataAsset.GetTextLinesByStateName(currentState);
-            if (bubbleTextManager != null)
+            if (BubbleTextManager.Instance != null)
             {
-                bubbleTextManager.OnAddMessageToQueue(
-                    new BubbleTextMessage { messageText = textLines[Random.Range(0, textLines.Count)].text, showDuration = 2, target = targetGameObject }
+                BubbleTextManager.Instance.OnAddMessageToQueue(
+                    new BubbleTextMessage { messageText = textLines[Random.Range(0, textLines.Count)].text, showDuration = showDuration, target = targetGameObject }
                     );
                 StartCoroutine(AsyncWaitCooldown(textDataAsset.messageShowCooldown));
             }
