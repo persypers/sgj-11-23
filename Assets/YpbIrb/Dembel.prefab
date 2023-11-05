@@ -75,13 +75,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4708754463995743119}
-  - component: {fileID: 4708754463995743116}
   - component: {fileID: 4708754463995743118}
   - component: {fileID: 4708754463995743105}
   - component: {fileID: 4708754463995743104}
   - component: {fileID: 4708754463995743107}
   - component: {fileID: 4708754463995743106}
   - component: {fileID: 4708754463995743109}
+  - component: {fileID: 4708754463995743116}
   - component: {fileID: 4708754463995743117}
   - component: {fileID: 4708754463995743114}
   m_Layer: 8
@@ -108,24 +108,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4708754463995743116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4708754463995743108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ccdcc920560b1f4a9810e5d08c4ee11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  itemJoint: {fileID: 8012946598069953306}
-  itemTrigger: {fileID: 4708754463540560259}
-  setIgnoreGravity: 0
-  guitarSongSource: {fileID: 4708754463995743117}
-  guitarPickupSource: {fileID: 4708754463995743114}
 --- !u!33 &4708754463995743118
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -203,7 +185,7 @@ Rigidbody:
   m_AngularDrag: 1.35
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4708754463995743106
@@ -248,6 +230,22 @@ MonoBehaviour:
   OnItemJointBreak:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4708754463995743116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708754463995743108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccdcc920560b1f4a9810e5d08c4ee11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guitarJoint: {fileID: 8012946598069953306}
+  guitarTrigger: {fileID: 4708754463540560259}
+  guitarSongSource: {fileID: 4708754463995743117}
+  guitarPickupSource: {fileID: 4708754463995743114}
 --- !u!82 &4708754463995743117
 AudioSource:
   m_ObjectHideFlags: 0
@@ -523,11 +521,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5294150350037350526, guid: 884fe17d73a051c4891cf5d0fadf2826,
-        type: 3}
-      propertyPath: m_VersionIndex
-      value: 2524
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884fe17d73a051c4891cf5d0fadf2826, type: 3}

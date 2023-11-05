@@ -348,8 +348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDataAsset: {fileID: 11400000, guid: a8420a86660fef14f83cc2212194777d, type: 2}
   currentState: Default
-  bubbleTextManager: {fileID: 442394328}
   targetGameObject: {fileID: 1620974695}
+  showDuration: 2
   objectToTrigger: {fileID: 519750834}
 --- !u!135 &153709210
 SphereCollider:
@@ -705,18 +705,6 @@ MonoBehaviour:
   OnItemJointBreak:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &442394328 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2030997096756440138, guid: c39512391fbdda3488f9ade1b28e09e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1169071594}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a1fe2d67f3fef49aa4e34675bb2d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519750834 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7253983127304857660, guid: 761cdc9e4e883334cbdcea062d0befa7,
@@ -772,8 +760,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDataAsset: {fileID: 11400000, guid: a8420a86660fef14f83cc2212194777d, type: 2}
   currentState: Default
-  bubbleTextManager: {fileID: 442394328}
   targetGameObject: {fileID: 1731418226}
+  showDuration: 2
   objectToTrigger: {fileID: 519750834}
 --- !u!135 &525741445
 SphereCollider:
@@ -3775,8 +3763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDataAsset: {fileID: 11400000, guid: a8420a86660fef14f83cc2212194777d, type: 2}
   currentState: Default
-  bubbleTextManager: {fileID: 442394328}
-  targetGameObject: {fileID: 0}
+  targetGameObject: {fileID: 1731418226}
+  showDuration: 2
   objectToTrigger: {fileID: 519750834}
 --- !u!1 &1941482154
 GameObject:

@@ -30,6 +30,8 @@ public class Item : MonoBehaviour
 	public void PickedUp()
 	{
 		Debug.Assert( !IsHeld );
+
+		OnPickUp.Invoke( this );
 		var body = GetComponent< Rigidbody >();
 		cachedGravity = body.useGravity;
 		cachedInterpolationMode = body.interpolation;
@@ -43,7 +45,6 @@ public class Item : MonoBehaviour
 		}
 
 		IsHeld = true;
-		OnPickUp.Invoke( this );
 	}
 
 	public void Dropped()
