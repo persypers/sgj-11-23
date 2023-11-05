@@ -16,7 +16,7 @@ public class SceneryManager : MonoBehaviour
 
     public GameObject startTile;
     public bool playTestCoro = true;
-    private List<GameObject> GroundTiles;
+    public List<GameObject> GroundTiles;
 
 //Для того, чтобы определять, какие объекты кидаем
     private Dictionary<(float, float), SceneryObjectGenerator> randomRanges;
@@ -68,11 +68,11 @@ public class SceneryManager : MonoBehaviour
     //Добавить тайл в начало дороги
     public void CreateNewTileAtStart()
     {
-        Bounds firstTileBounds = GroundTiles[0].GetComponent<Collider>().bounds;
+        var firstTile = GroundTiles[0];
 
-        float x = firstTileBounds.center.x;
-        float y = GroundTiles[0].transform.position.y;
-        float z = firstTileBounds.max.z + firstTileBounds.extents.z;
+        float x = firstTile.transform.position.x;
+        float y = firstTile.transform.position.y;
+        float z = firstTile.transform.position.z + World.Instance.TileSize;
 
         GroundTiles.Insert(0, CreateTileAt( x, y, z ) );
     }
@@ -94,7 +94,7 @@ public class SceneryManager : MonoBehaviour
     }
 
     //Деактивация тайла и всех объектов, которые были на нем рассыпаны
-    void DeleteLastTile()
+    public void DeleteLastTile()
     {
         GameObject tile = GroundTiles[GroundTiles.Count - 1];
         if( tile == startTile )
@@ -145,15 +145,23 @@ public class SceneryManager : MonoBehaviour
         if( startTile )
         {
             GroundTiles.Add( startTile );
+            for( int i = 0; i < World.Instance.WarpTiles; i++ )
+            {
+                CreateNewTileAtStart();
+            }
         }
         else
             GroundTiles.Add( CreateTileAt( 0, 0, 0 ) );
         
         if( playTestCoro )
             StartCoroutine((test()));
-        else
+    }
+
+    public void Warp( Vector3 move )
+    {
+        for( int i = 0; i < GroundTiles.Count; i++ )
         {
-            CreateNewTileAtStart();
+            GroundTiles[i].GetComponent< TileData >().Warp( move );
         }
     }
 

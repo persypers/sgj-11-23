@@ -76,10 +76,6 @@ namespace RigidFps
 		const float k_JumpGroundingPreventionTime = 0.2f;
 		const float k_GroundCheckDistanceInAir = 0.07f;
 
-		void Awake()
-		{
-		}
-
 		void Start()
 		{
 			// fetch components on the same gameObject
@@ -207,7 +203,12 @@ namespace RigidFps
 			var horizontalVelocity = Vector3.ProjectOnPlane( rigidbody.velocity, Vector3.up );
 
 			desiredVelocity = worldspaceMoveInput * maxMovementSpeed;
-			velDiff = desiredVelocity - horizontalVelocity;
+
+			if( groundCheck.IsGroundedOnTrain )
+				desiredVelocity += TrainScript.Instance.currentVelocity;
+
+			var desiredVelocityHor = Vector3.ProjectOnPlane( desiredVelocity, Vector3.up );
+			velDiff = desiredVelocityHor - horizontalVelocity;
 
 			maxAccelMagnitude = Mathf.Min( velDiff.magnitude / dt, IsGrounded ? movementAccel : airAccel );
 			horizontalAccel = velDiff.normalized * maxAccelMagnitude;
@@ -265,6 +266,13 @@ namespace RigidFps
 					}
 				}
 			}
+		}
+
+		public void Warp( Vector3 move )
+		{
+			PlayerCamera.transform.position += move;
+			hand.itemDummy.position += move;
+			hand.itemDummy.transform.position += move;
 		}
 
 		void OnDie()

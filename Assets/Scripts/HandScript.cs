@@ -34,6 +34,8 @@ public class HandScript : MonoBehaviour
 		itemDummy.transform.SetParent( null );
 		itemDummy.transform.position = transform.position;
 		gimbalJoint.connectedBody = itemDummy;
+
+		LockGimbal( false );
 	}
 
 	void OnEnable()

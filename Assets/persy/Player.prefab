@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 996728200}
   - component: {fileID: 996728199}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: ItemDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,12 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996728198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1999998, z: 1.4999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2635207373175657068}
-  m_RootOrder: 0
+  m_Father: {fileID: 8746678193447392789}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &996728199
 Rigidbody:
@@ -44,7 +44,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -228,7 +228,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2871
+    m_Bits: 3895
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   me: {fileID: 7253983127304857660}
+  trainLayer: 12
 --- !u!1 &7253983127304857660
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7253983127304857660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.11587, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -395,6 +396,7 @@ Transform:
   - {fileID: 7770356584156379712}
   - {fileID: 3547096381199904638}
   - {fileID: 2635207373175657068}
+  - {fileID: 996728200}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -860,7 +862,7 @@ GameObject:
   - component: {fileID: 9056613952308352102}
   - component: {fileID: 4361840217296619781}
   - component: {fileID: 8488331356379064877}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,8 +880,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.2, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 996728200}
+  m_Children: []
   m_Father: {fileID: 8746678193447392789}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1127,9 +1128,9 @@ ConfigurableJoint:
   m_ProjectionMode: 0
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
-  m_ConfiguredInWorldSpace: 1
+  m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 1
-  m_BreakForce: 3000
+  m_BreakForce: 5000
   m_BreakTorque: 300
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
