@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using RigidFps;
 public class KillBoxScript : MonoBehaviour
 {
     public TrainScript train;
-    public GameObject cabin;
+    public GameObject spawnPoint;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,21 @@ public class KillBoxScript : MonoBehaviour
     {
         if (collider.gameObject == player)
         {
-            player.transform.position = cabin.transform.position;
-            player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, train.currentSpeed);
+            float x_move = spawnPoint.transform.position.x - player.transform.position.x;
+            float y_move = spawnPoint.transform.position.y - player.transform.position.y;
+            float z_move = spawnPoint.transform.position.z - player.transform.position.z;
+
+            Debug.Log("x_move: " + x_move + " y_move: " + y_move + " z_move: " + z_move);
+            Vector3 move = new Vector3(x_move, y_move, z_move);
+            player.GetComponent<Player>().Warp(move);
+            player.GetComponent<Rigidbody>().position = spawnPoint.transform.position;
+            //hand.itemDummy.transform
+            //player.GetComponent<Rigidbody>().velocity = new Vector3(0,0,train.currentSpeed);
+            //player.GetComponent<Rigidbody>().position = new Vector3(0,0,train.currentSpeed);
+
+
+            //player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            //player.transform.position = spawnPoint.transform.position;
         }
         else
         {

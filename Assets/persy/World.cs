@@ -8,7 +8,7 @@ public class World : Fancy.MonoSingleton< World >
 	//to set in KillPlane
 	public TrainScript train;
 	public GameObject player;
-	public GameObject cabin;
+	public GameObject spawnPoint;
 
 	public GameObject killBoxPlane;
 	public float firstTileShift = -100.0f;
@@ -92,7 +92,7 @@ public class World : Fancy.MonoSingleton< World >
         plane.transform.localScale = new Vector3(width, height, depth);
 		plane.GetComponent<KillBoxScript>().train = train;
 		plane.GetComponent<KillBoxScript>().player = player;
-		plane.GetComponent<KillBoxScript>().cabin = cabin;
+		plane.GetComponent<KillBoxScript>().spawnPoint = spawnPoint;
 		//plane.train = null;
 		//plane.player = null;
 		//plane.cabin = null; 
@@ -113,19 +113,19 @@ public class World : Fancy.MonoSingleton< World >
 		float y_size = max_y - min_y;
 		float z_size = max_z - min_z;
 		//back
-		CreateKillPlane(min_x + x_size/2, min_y+y_size/2, min_z, x_size, y_size, 0.1f);
+		CreateKillPlane(min_x + x_size/2, min_y+y_size/2, min_z, x_size, y_size, 1.0f);
 		//front
-		CreateKillPlane(min_x + x_size/2, min_y+y_size/2, max_z, x_size, y_size, 0.1f);
+		CreateKillPlane(min_x + x_size/2, min_y+y_size/2, max_z, x_size, y_size, 1.0f);
 
 		//top
-		CreateKillPlane(min_x + x_size/2, max_y, min_z + z_size/2, x_size, 0.1f, z_size);
+		CreateKillPlane(min_x + x_size/2, max_y, min_z + z_size/2, x_size, 1.0f, z_size);
 		//bottom
-		CreateKillPlane(min_x + x_size/2, min_y, min_z + z_size/2, x_size, 0.1f, z_size);
+		CreateKillPlane(min_x + x_size/2, min_y, min_z + z_size/2, x_size, 1.0f, z_size);
 
 		//left
-		CreateKillPlane(min_x, min_y+y_size/2, min_z + z_size/2, 0.1f, y_size, z_size);
+		CreateKillPlane(min_x, min_y+y_size/2, min_z + z_size/2, 1.0f, y_size, z_size);
 		//right
-		CreateKillPlane(max_x, min_y+y_size/2, min_z + z_size/2, 0.1f, y_size, z_size);
+		CreateKillPlane(max_x, min_y+y_size/2, min_z + z_size/2, 1.0f, y_size, z_size);
 	}
 
 	void Start()
