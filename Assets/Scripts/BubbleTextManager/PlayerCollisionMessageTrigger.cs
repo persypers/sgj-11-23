@@ -32,6 +32,7 @@ public class PlayerCollisionMessageTrigger : MonoBehaviour
     public void SetCurrentState(string newState)
     {
         currentState = newState;
+        Debug.Log("New state: " + newState);
     }
 
     private IEnumerator AsyncWaitCooldown(float cooldown)
