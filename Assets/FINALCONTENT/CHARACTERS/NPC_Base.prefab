@@ -311,12 +311,14 @@ GameObject:
   - component: {fileID: 1967183589580312147}
   - component: {fileID: 1967183589580312146}
   - component: {fileID: 1967183589580312157}
-  - component: {fileID: 1967183589580312153}
   - component: {fileID: 1967183589580312159}
-  - component: {fileID: 1967183589580312158}
   - component: {fileID: 3959348131102630424}
   - component: {fileID: 7865087033744890455}
   - component: {fileID: 5783696729948607482}
+  - component: {fileID: 1967183589580312158}
+  - component: {fileID: 3351052422864466018}
+  - component: {fileID: 7982621122057710978}
+  - component: {fileID: 4630165796703027272}
   m_Layer: 8
   m_Name: NPC_Base
   m_TagString: Untagged
@@ -386,26 +388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: -0.85, z: 0}
---- !u!114 &1967183589580312153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967183589580312152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11a98dece931b8848a9653fb290289a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 6
-  itemJoint: {fileID: 1967183589520740293}
-  itemTriggerCollider: {fileID: 1967183589486449086}
-  setIgnoreGravity: 0
-  nonUnique: 0
-  allowTriggerOnPlayerHeldItem: 0
-  ballThrowDelay: 3
-  throwForce: 7
 --- !u!114 &1967183589580312159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,26 +419,6 @@ MonoBehaviour:
       m_Calls: []
   burn: 0
   isBurning: 0
---- !u!114 &1967183589580312158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967183589580312152}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 8
-  itemJoint: {fileID: 1967183589520740293}
-  itemTriggerCollider: {fileID: 1967183589486449086}
-  setIgnoreGravity: 0
-  nonUnique: 1
-  allowTriggerOnPlayerHeldItem: 0
-  newStateName: Ball
-  playerCollisionMessageTrigger: {fileID: 1967183588778717361}
 --- !u!82 &3959348131102630424
 AudioSource:
   m_ObjectHideFlags: 0
@@ -469,7 +431,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -565,7 +527,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -661,7 +623,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c9b973ec14061d5458635080a9ac827c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -745,6 +707,85 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1967183589580312158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967183589580312152}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  itemJoint: {fileID: 1967183589520740293}
+  itemTriggerCollider: {fileID: 1967183589486449086}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Ball
+  playerCollisionMessageTrigger: {fileID: 1967183588778717361}
+--- !u!114 &3351052422864466018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967183589580312152}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9bc76a9cca59148b98a43d0fa163ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  itemJoint: {fileID: 1967183589520740293}
+  itemTriggerCollider: {fileID: 1967183589486449086}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  exchangeDelay: 3
+  returnExchangeItem: {fileID: 0}
+--- !u!114 &7982621122057710978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967183589580312152}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415c32985c3920a4f8301e0fb7aaf501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  itemJoint: {fileID: 1967183589520740293}
+  itemTriggerCollider: {fileID: 1967183589486449086}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+--- !u!114 &4630165796703027272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967183589580312152}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e89374d34cda43b7fe0e077d2aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  itemJoint: {fileID: 1967183589520740293}
+  itemTriggerCollider: {fileID: 1967183589486449086}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  itemThrowDelay: 3
+  throwForce: 30
+  newStateName: Magazine
 --- !u!1 &1967183589781017378
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,9 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 	public TMP_Text fuelLabel;
 	public float itemBurnRate = 1.0f;
 	public float fuel = 40.0f;
+	public bool debugUnlimitedFuel = false;
 	public float fuelBurnPerMinute = 20.0f;
+	public const float perMinuteCoef = 1.0f / 60.0f;
 
 	
 	public float maxAudioAtFuel = 5.0f;
@@ -50,11 +52,10 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 
 	void Update()
 	{
-		const float perMinuteCoef = 1.0f / 60.0f;
 		if( TrainScript.Instance.go && fuel > 0.0f )
 		{
 			fuel -= fuelBurnPerMinute * perMinuteCoef * Time.deltaTime;
-			if( fuel <= 0.0f )
+			if( fuel <= 0.0f && !debugUnlimitedFuel )
 			{
 				TrainScript.Instance.hasFuel = false;
 			}

@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2549844873726091957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2549844873726091959}
+  - component: {fileID: 2549844873726091958}
+  - component: {fileID: 2549844873726091952}
+  m_Layer: 0
+  m_Name: EnvironmentController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2549844873726091959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549844873726091957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2549844873726091958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549844873726091957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e694a5892e01446a0cfd05ada6807b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorSky:
+    serializedVersion: 2
+    key0: {r: 0.11807659, g: 0.11423106, b: 0.16037738, a: 1}
+    key1: {r: 0.8784314, g: 0.5372549, b: 0.6431373, a: 1}
+    key2: {r: 0.08962262, g: 0.5931277, b: 1, a: 0}
+    key3: {r: 0.4292453, g: 0.7251921, b: 1, a: 0}
+    key4: {r: 0.09019608, g: 0.59607846, b: 1, a: 0}
+    key5: {r: 0.8773585, g: 0.5338644, b: 0.64233613, a: 0}
+    key6: {r: 0.12156863, g: 0.11764706, b: 0.16078432, a: 0}
+    key7: {r: 0.24705882, g: 0.13725491, b: 0.13725491, a: 0}
+    ctime0: 7325
+    ctime1: 15806
+    ctime2: 23130
+    ctime3: 33731
+    ctime4: 41634
+    ctime5: 49537
+    ctime6: 58403
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  colorFilter:
+    serializedVersion: 2
+    key0: {r: 0.44108224, g: 0.4542609, b: 0.5283019, a: 1}
+    key1: {r: 0.8396226, g: 0.5505073, b: 0.64796185, a: 1}
+    key2: {r: 1, g: 0.8235294, b: 0.7764706, a: 0}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 0.96552515, g: 0.92156976, b: 0.9357906, a: 0}
+    key5: {r: 1, g: 0.82211214, b: 0.7783019, a: 0}
+    key6: {r: 0.7264151, g: 0.51054645, b: 0.5803863, a: 0}
+    key7: {r: 0.4392157, g: 0.45490196, b: 0.5294118, a: 0}
+    ctime0: 7517
+    ctime1: 12336
+    ctime2: 16577
+    ctime3: 20046
+    ctime4: 44911
+    ctime5: 48188
+    ctime6: 53006
+    ctime7: 58018
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 8
+    m_NumAlphaKeys: 2
+  Skybox: {fileID: 2100000, guid: 0ab35e8846b98714a913e23c93ab0f02, type: 2}
+  volume: {fileID: 2549844873726091952}
+  minBrightness: -2
+  maxBrightness: 2
+  timeOfDay: 0
+  timeOfDaySpeed: 0.005
+  timeOfDayAuto: 0
+--- !u!114 &2549844873726091952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549844873726091957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: a51fece2dc1781441897c7c250401d15, type: 2}

@@ -75,12 +75,143 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}
+--- !u!153 &1813271986025135922 stripped
+ConfigurableJoint:
+  m_CorrespondingSourceObject: {fileID: 1967183589520740293, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 173070066406748407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1813271986042074461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1967183589503731114, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
     type: 3}
   m_PrefabInstance: {fileID: 173070066406748407}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &1813271986126463305 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 1967183589486449086, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 173070066406748407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1813271986248679087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967183589580312152, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 173070066406748407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3460773164691080344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813271986248679087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e89374d34cda43b7fe0e077d2aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 28
+  itemJoint: {fileID: 1813271986025135922}
+  itemTriggerCollider: {fileID: 1813271986126463305}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  itemThrowDelay: 3
+  throwForce: 30
+  newStateName: Pillow
+--- !u!114 &4342847359304093140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813271986248679087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 25
+  itemJoint: {fileID: 1813271986025135922}
+  itemTriggerCollider: {fileID: 1813271986126463305}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Pumpkin
+  playerCollisionMessageTrigger: {fileID: 1813271987033686086}
+--- !u!114 &8937596146116074058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813271986248679087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 5
+  itemJoint: {fileID: 1813271986025135922}
+  itemTriggerCollider: {fileID: 1813271986126463305}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: VinylPlayer
+  playerCollisionMessageTrigger: {fileID: 1813271987033686086}
+--- !u!114 &8132614907621627657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813271986248679087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 6
+  itemJoint: {fileID: 1813271986025135922}
+  itemTriggerCollider: {fileID: 1813271986126463305}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: VinylPlayer
+  playerCollisionMessageTrigger: {fileID: 1813271987033686086}
+--- !u!114 &4514451413694755952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813271986248679087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  itemJoint: {fileID: 1813271986025135922}
+  itemTriggerCollider: {fileID: 1813271986126463305}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Guitar
+  playerCollisionMessageTrigger: {fileID: 1813271987033686086}
+--- !u!114 &1813271987033686086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1967183588778717361, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 173070066406748407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ea452eaa41378468127fbede55dd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2574133427119747480
 PrefabInstance:
   m_ObjectHideFlags: 0

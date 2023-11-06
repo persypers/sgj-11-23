@@ -47,6 +47,12 @@ namespace RigidFps
 		public float airAccel = 5.0f;
 		public float jumpForce = 40.0f;
 
+		public float minReduceSpeedDistanceX = 80.0f;
+		public float maxReducedSpeedDistanceX = 95.0f;
+
+		public float minReduceSpeedDistanceZ = 200.0f;
+		public float maxReducedSpeedDistanceZ = 250.0f;
+
 		public UnityAction<bool> OnStanceChanged;
 
 		public Vector3 CharacterVelocity { get; set; }
@@ -220,6 +226,23 @@ namespace RigidFps
 				desiredVelocity += TrainScript.Instance.currentVelocity;
 
 			var desiredVelocityHor = Vector3.ProjectOnPlane( desiredVelocity, Vector3.up );
+
+			{
+				Vector3 toTrain = TrainScript.Instance.transform.position - transform.position;
+				Vector3 toTrainHor = new Vector3( Mathf.Abs( toTrain.x ), 0.0f, Mathf.Abs( toTrain.z ) );
+				if( toTrainHor.x >= minReduceSpeedDistanceX || toTrainHor.z >= minReduceSpeedDistanceZ )
+				{
+					Vector2 factor = new Vector2(
+						Mathf.Clamp01( Mathf.InverseLerp( maxReducedSpeedDistanceX, minReduceSpeedDistanceX, toTrainHor.x ) ),
+						Mathf.Clamp01( Mathf.InverseLerp( maxReducedSpeedDistanceZ, minReduceSpeedDistanceZ, toTrainHor.z ) ) );
+				
+					if( desiredVelocityHor.x * toTrain.x < 0.0f )
+						desiredVelocityHor.x *= factor.x;
+					if( desiredVelocityHor.z * toTrain.z < 0.0f )
+						desiredVelocityHor.z *= factor.y;
+				}
+			}
+
 			velDiff = desiredVelocityHor - horizontalVelocity;
 
 			maxAccelMagnitude = Mathf.Min( velDiff.magnitude / dt, IsGrounded ? movementAccel : airAccel );
@@ -285,10 +308,13 @@ namespace RigidFps
 		public void Warp( Vector3 move )
 		{
 			//PlayerCamera.transform.position += move;
-			hand.GetComponent< Rigidbody >().position += move;
+			var body = hand.GetComponent< Rigidbody >();
+			body.position += move;
+			body.WakeUp();
 			hand.transform.position += move;
 			hand.itemDummy.position += move;
 			hand.itemDummy.transform.position += move;
+			hand.itemDummy.WakeUp();
 		}
 
 		void OnDie()
