@@ -1,8 +1,7 @@
 using UnityEngine;
 using SpeechText;
-using System.Collections.Generic;
-using System.Linq;
 using System.Collections;
+using RigidFps;
 
 public class PlayerCollisionMessageTrigger : MonoBehaviour
 {
@@ -10,12 +9,14 @@ public class PlayerCollisionMessageTrigger : MonoBehaviour
     public string currentState = "Default";
     public GameObject targetGameObject;
     public float showDuration = 2;
-    public GameObject objectToTrigger; // Указание объекта, который запустит действие
+    public GameObject objectToTrigger = null; // Указание объекта, который запустит действие
     private bool isReadyToTalk = true;
+
 
     private void OnTriggerStay(Collider other)
     {
-        if (isReadyToTalk && other.gameObject == objectToTrigger)
+        var targ = objectToTrigger == null ? Player.Instance.gameObject : objectToTrigger;
+        if (isReadyToTalk && other.gameObject == targ)
         {
             var textLines = textDataAsset.GetTextLinesByStateName(currentState);
             if (BubbleTextManager.Instance != null)
@@ -25,6 +26,15 @@ public class PlayerCollisionMessageTrigger : MonoBehaviour
                     );
                 StartCoroutine(AsyncWaitCooldown(textDataAsset.messageShowCooldown));
             }
+        }
+    }
+
+    public void SetCurrentState(string newState)
+    {
+        if (textDataAsset.GetTextLinesByStateName(newState).Count > 0)
+        {
+            currentState = newState;
+            Debug.Log("New state: " + newState);
         }
     }
 

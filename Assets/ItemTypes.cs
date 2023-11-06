@@ -9,7 +9,9 @@ public enum ItemTypes
 	Vinyl = 6,
 	Magazine = 7,
 	Ball = 8,
-	Coal = 9,
-
+	Bag = 9,
+	Coal = 10,
+	CoalBag = 11,
+	Suitcase = 12,
 	Total
 }

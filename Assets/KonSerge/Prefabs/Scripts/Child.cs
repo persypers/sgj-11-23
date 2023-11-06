@@ -11,17 +11,44 @@ public class Child : GrabItemBehaviour
     public override IEnumerator DoBehaviour(Item item)
     {
         yield return base.DoBehaviour(item);
-        hasBall = true;
-        StartCoroutine(AsyncThrowBall(item));
+        if (item.type == ItemTypes.Ball)
+        {
+            hasBall = true;
+            StartCoroutine(AsyncThrowBall(item));
+        }
+        OnChangeChildMessages(item);
     }
     public override void OnBehaviourCanceled(Item item)
     {
         hasBall = false;
+        OnChangeChildMessages(null);
     }
 
     void Update()
     {
 
+    }
+
+    void OnChangeChildMessages(Item item)
+    {
+        var speechTrigger = transform.GetComponentInChildren<PlayerCollisionMessageTrigger>();
+        if (speechTrigger != null)
+        {
+            switch (item.type)
+            {
+                case ItemTypes.Ball:
+                    {
+                        speechTrigger.currentState = "Ball";
+                        break;
+                    }
+                case ItemTypes.Magazine:
+                    {
+                        speechTrigger.currentState = "Magazine";
+                        break;
+                    }
+                default: break;
+            }
+        }
     }
 
     private IEnumerator AsyncThrowBall(Item ball)

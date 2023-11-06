@@ -25,7 +25,7 @@ namespace SpeechText
 
         public List<TextLine> GetTextLinesByStateName(string stateName)
         {
-            return states.Find(item => item.StateName == "Default")?.lines ?? new List<TextLine>();
+            return states.Find(item => item.StateName == stateName)?.lines ?? new List<TextLine>();
         }
     }
 }

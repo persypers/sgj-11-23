@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c1c47cbf3af15f4fa5be4f181cfd171, type: 3}
-  m_Name: Gennady
+  m_Name: GennadySpeech
   m_EditorClassIdentifier: 
   states:
   - StateName: Default
