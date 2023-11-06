@@ -25,13 +25,7 @@ public class KillBoxScript : MonoBehaviour
             Vector3 move = new Vector3(x_move, y_move, z_move);
             player.GetComponent<Player>().Warp(move);
             player.GetComponent<Rigidbody>().position = spawnPoint.transform.position;
-            //hand.itemDummy.transform
-            //player.GetComponent<Rigidbody>().velocity = new Vector3(0,0,train.currentSpeed);
-            //player.GetComponent<Rigidbody>().position = new Vector3(0,0,train.currentSpeed);
-
-
-            //player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            //player.transform.position = spawnPoint.transform.position;
+            player.GetComponent<Rigidbody>().velocity = new Vector3(0,0,train.currentSpeed);
         }
         else
         {

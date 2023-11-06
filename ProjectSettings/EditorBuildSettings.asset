@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scripts/ThirdParty/AdditiveLoading/Level2.unity
     guid: 59429fd3818cec74eadad29ff0e8c5da
-  - enabled: 1
+  - enabled: 0
     path: Assets/RigidFPS/Rigid.unity
     guid: 54e48bd6ddfa84f45a02509e116d9fe7
   m_configObjects: {}
