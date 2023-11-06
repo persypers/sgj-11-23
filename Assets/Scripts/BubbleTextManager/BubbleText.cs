@@ -28,7 +28,10 @@ public class BubbleText : MonoBehaviour
         }
         transform.rotation = Quaternion.LookRotation(transform.position - playerCamera.position);
     }
-
+    public GameObject GetCurrentTarget()
+    {
+        return currentTarget;
+    }
     private void PrepareTextMesh(TextMeshPro textObject, BubbleTextMessage bubbleTextMessage)
     {
         textObject.text = bubbleTextMessage.messageText;
