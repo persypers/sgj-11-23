@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4827775021997954459, guid: b3a2569b932669343bf661eda444e4de,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c20135ada85234d4ba92ec597d2c357a, type: 3}
     - target: {fileID: 7929911573107210520, guid: b3a2569b932669343bf661eda444e4de,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -22,6 +27,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ITEM_Basketball
       objectReference: {fileID: 0}
+    - target: {fileID: 8179084330536584632, guid: b3a2569b932669343bf661eda444e4de,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c20135ada85234d4ba92ec597d2c357a, type: 3}
     - target: {fileID: 8179084330536584634, guid: b3a2569b932669343bf661eda444e4de,
         type: 3}
       propertyPath: m_RootOrder
@@ -77,6 +87,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8179084330536584635, guid: b3a2569b932669343bf661eda444e4de,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c20135ada85234d4ba92ec597d2c357a, type: 3}
     m_RemovedComponents:
     - {fileID: 8179084330536584608, guid: b3a2569b932669343bf661eda444e4de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b3a2569b932669343bf661eda444e4de, type: 3}
@@ -97,7 +112,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.14
+  m_Radius: 0.182
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &6144426330040051796 stripped
 Transform:
@@ -116,6 +131,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbd204d4943c923489fdeadea3296f8a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbd204d4943c923489fdeadea3296f8a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dbd204d4943c923489fdeadea3296f8a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dbd204d4943c923489fdeadea3296f8a,
         type: 3}
