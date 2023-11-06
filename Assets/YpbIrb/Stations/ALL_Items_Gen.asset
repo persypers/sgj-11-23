@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0f47c780189cf459af03a42f6fc437, type: 3}
+  m_Name: ALL_Items_Gen
+  m_EditorClassIdentifier: 
+  entries:
+  - prefabOrGenerator: {fileID: 3736426173853090354, guid: ff6a3f9f7cb3c7046b405a94f32ca1f4,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 6246303811244394355, guid: 3b224f1bbf29f5745bd3c39314583875,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5388599164220249327, guid: 661e1664f2701484e9a395dd513db392,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 1242506957827815071, guid: a8b6566209e91b1479a64d987ea87dee,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 6062035182871909352, guid: 202be617c2e72fd44b51caf7a0dfbfb2,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 7811186069888815525, guid: 10e421dd811b9c24c996d8aeca743254,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 4606648493529423072, guid: cf4d17193e8b86c4b96b2362c0b065c8,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 9062683141297023733, guid: 65a8f20e0df317d4fa43ba7f546e0cfc,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 3376542292636816095, guid: d8e56355fbc59a740b1191897afc8ee7,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 6399751768287981363, guid: 2831c67becb03c340b295e6c212661b7,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 8124263728975498720, guid: 13b45ab125db8dd4e867dfce1d7c12de,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 4307230386815581852, guid: 1de9cc5d1a539b9479b17271cbcb88c9,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5052924974133630834, guid: af8cfcd74fee30444850b2c5ef4ccbd1,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 2900428618355724391, guid: 647637174bc063943ac4c1b911e002c8,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 17152486324807623, guid: 7a9c026e4d92c944486f78882b366266,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 350870159066272260, guid: 3162390c5e08cb240a5b6d0470ce05b7,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5399153563034857138, guid: 9d16dbeea9a049940aaad7a17e0d2c5b,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5924590471474649120, guid: bfe664a09c7b31f488708afdfe7c2dcf,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 8398566881114177069, guid: 24b8621d043bec948b568a8e12d5a75d,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 33206953612281863, guid: c30f7b4714d1d2d49bbea70c1a5f2df7,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 1649011030657490640, guid: 0f18bd6a5b5f12643b23906a6664f679,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 6023349514515012558, guid: 6843a8d16beb2ca43aa1761a9dec0b8d,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 4827323693774617429, guid: ec9e679d42f818c489d9839e005f9244,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5563624912255799612, guid: 6a316a7c5cfeb8b4a8c4cf3d1abf3676,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 1560699831372173852, guid: 54e30e92d984ac84f87fc6d7e10270ae,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5684224871660232083, guid: a7ac1a5c653150142bf99bbd22d9ef20,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5302946580031333958, guid: 9e0957f0058f1c247a92d0e63b774991,
+      type: 3}
+    weight: 1

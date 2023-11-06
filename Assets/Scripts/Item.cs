@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
 	public ItemTypes type;
 	public float fuelValue;
 	public bool IsHeld { get; private set;}
+	public bool keepGravity = false;
 
 	public AudioSource pickupAudio;
 	public AudioSource dropAudio;
@@ -35,9 +36,12 @@ public class Item : MonoBehaviour
 
 		OnPickUp.Invoke( this );
 		var body = GetComponent< Rigidbody >();
-		cachedGravity = body.useGravity;
 		cachedInterpolationMode = body.interpolation;
-		body.useGravity = false;
+		if( !keepGravity )
+		{
+			cachedGravity = body.useGravity;
+			body.useGravity = false;
+		}
 		body.interpolation = RigidbodyInterpolation.Interpolate;
 		body.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
@@ -53,7 +57,8 @@ public class Item : MonoBehaviour
 	{
 		Debug.Assert( IsHeld );
 		var body = GetComponent< Rigidbody >();
-		body.useGravity = cachedGravity;
+		if( !keepGravity )
+			body.useGravity = cachedGravity;
 		body.interpolation = cachedInterpolationMode;
 		IsHeld = false;
 

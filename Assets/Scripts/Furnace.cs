@@ -61,9 +61,9 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 			}
 		}
 		int prevLabel = fuelInt;
-		fuelInt = Mathf.Clamp( (int) fuel, 0, 511 );
+		fuelInt = Mathf.Clamp( (int) fuel, 0, 999 );
 		if( fuelInt != prevLabel )
-			fuelLabel.text = System.Convert.ToString( fuelInt, 8 );
+			fuelLabel.text = fuelInt.ToString();
 
 
 		float audioLevel = Mathf.Clamp01( fuel / maxAudioAtFuel );

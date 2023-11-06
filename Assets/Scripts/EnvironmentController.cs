@@ -28,6 +28,8 @@ public class EnvironmentController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _timer = 0.3f;
+
         Skybox = RenderSettings.skybox;
         VolumeProfile proflile = volume.sharedProfile;
         volume.profile.TryGet(out brightness);
