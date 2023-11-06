@@ -24,6 +24,7 @@ public class SceneryManager : MonoBehaviour
 
 
     private float max_random_range;
+    int tilesCreated = 0;
 
     void ScatterSceneryObjects(GameObject groundObject, TileData tileData)
     {
@@ -66,7 +67,7 @@ public class SceneryManager : MonoBehaviour
     }
 
     //Добавить тайл в начало дороги
-    public void CreateNewTileAtStart()
+    public TileData CreateNewTileAtStart()
     {
         var firstTile = GroundTiles[0];
 
@@ -74,15 +75,18 @@ public class SceneryManager : MonoBehaviour
         float y = firstTile.transform.position.y;
         float z = firstTile.transform.position.z + World.Instance.TileSize;
 
-        GroundTiles.Insert(0, CreateTileAt( x, y, z ) );
+        var tile = CreateTileAt( x, y, z );
+        tile.index = tilesCreated++;
+        GroundTiles.Insert(0, tile.gameObject );
+        return tile;
     }
 
-    GameObject CreateTileAt( float x, float y, float z )
+    TileData CreateTileAt( float x, float y, float z )
     {
         GameObject groundObject = GenerateGroundTile(x, y, z);
         var tileData = groundObject.GetComponent<TileData>();
         ScatterSceneryObjects(groundObject, tileData);
-        return groundObject;
+        return tileData;
     }
 
     void GenerateNewTiles(int n)
@@ -102,6 +106,16 @@ public class SceneryManager : MonoBehaviour
         else
             tile.SetActive(false);
         GroundTiles.RemoveAt(GroundTiles.Count - 1);
+    }
+
+    public void DeleteTilesUpToIndex( int index )
+    {
+        var lastTile = GroundTiles[ GroundTiles.Count - 1 ];
+        while( lastTile != null && lastTile.GetComponent< TileData >().index < index )
+        {
+            DeleteLastTile();
+            lastTile = GroundTiles[ GroundTiles.Count - 1 ];
+        }
     }
 
     void DeleteLastTiles(int n)
@@ -145,13 +159,14 @@ public class SceneryManager : MonoBehaviour
         if( startTile )
         {
             GroundTiles.Add( startTile );
-            for( int i = 0; i < World.Instance.WarpTiles; i++ )
+            tilesCreated = World.Instance.absoluteTileIndex + 1;
+            for( int i = 0; i < World.Instance.ForwardViewDistanceInTiles; i++ )
             {
                 CreateNewTileAtStart();
             }
         }
         else
-            GroundTiles.Add( CreateTileAt( 0, 0, 0 ) );
+            GroundTiles.Add( CreateTileAt( 0, 0, 0 ).gameObject );
         
         if( playTestCoro )
             StartCoroutine((test()));

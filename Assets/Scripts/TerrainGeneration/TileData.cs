@@ -7,6 +7,7 @@ public class TileData : MonoBehaviour
 	public static Vector2 tileSize = new Vector2( 60.0f, 60.0f );
 	// понадобится позже
 	Vector2Int tileCoordinates;
+	public int index;
 	// просто включать и выключать объекты быстрее, чем менять их родителя
 	List< GameObject > children = new List<GameObject>();
 

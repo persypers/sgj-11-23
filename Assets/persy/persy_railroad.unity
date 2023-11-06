@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 4708754463995743119, guid: 91eb6f136d96c9d4cb23fbcf6c96b6e6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4708754463995743119, guid: 91eb6f136d96c9d4cb23fbcf6c96b6e6,
         type: 3}
@@ -470,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 716458735946854376, guid: c39512391fbdda3488f9ade1b28e09e6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 716458735946854376, guid: c39512391fbdda3488f9ade1b28e09e6,
         type: 3}
@@ -849,7 +849,7 @@ PrefabInstance:
     - target: {fileID: 5294150350037350521, guid: 884fe17d73a051c4891cf5d0fadf2826,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5294150350037350521, guid: 884fe17d73a051c4891cf5d0fadf2826,
         type: 3}
@@ -1550,7 +1550,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-306824
+  m_Name: pb_Mesh-1558
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1769,7 +1769,7 @@ PrefabInstance:
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8746678193447392789, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -1880,9 +1880,10 @@ GameObject:
   - component: {fileID: 987203510}
   - component: {fileID: 987203511}
   - component: {fileID: 987203512}
+  - component: {fileID: 987203514}
   - component: {fileID: 987203513}
   m_Layer: 0
-  m_Name: SceneryManager
+  m_Name: '[ -<=WORLD=>- ]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1907,8 +1908,9 @@ Transform:
   - {fileID: 676436770}
   - {fileID: 1239030108}
   - {fileID: 514355283}
+  - {fileID: 1803919092}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &987203510
 MonoBehaviour:
@@ -1958,16 +1960,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00eb561c6ee2ed84195b1684967e0d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  train: {fileID: 0}
+  player: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  killBoxPlane: {fileID: 0}
   firstTileShift: -100
   WarpTriggerDistance: 600
   TileSize: 200
   WarpTiles: 4
+  ForwardViewDistanceInTiles: 3
+  BackViewDistanceInTiles: 3
   physicsSearchHeight: 64
   warpLayers:
     serializedVersion: 2
     m_Bits: 11009
   sceneryManager: {fileID: 987203510}
-  onTile: 1
+  relativeTileIndex: 0
+  absoluteTileIndex: 0
+  stationStopDistanceCorrection: 25
 --- !u!114 &987203513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,6 +1996,19 @@ MonoBehaviour:
   - Master
   CollisionTag: 
   PreloadSamples: 1
+--- !u!114 &987203514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987203507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1832842bff22b4885a81a1623273d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationGenerator: {fileID: 1803919091}
 --- !u!1 &1001741103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2253,7 @@ PrefabInstance:
     - target: {fileID: 7373846421823815362, guid: 78bd8279adc833440bc5f8411cedcb13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7373846421823815362, guid: 78bd8279adc833440bc5f8411cedcb13,
         type: 3}
@@ -2449,7 +2472,7 @@ PrefabInstance:
     - target: {fileID: 3092382951603228807, guid: d50180c527838b048ac065b1af4355b0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3092382951603228807, guid: d50180c527838b048ac065b1af4355b0,
         type: 3}
@@ -2786,6 +2809,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 987203509}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1803919090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1803919092}
+  - component: {fileID: 1803919091}
+  m_Layer: 0
+  m_Name: StationsPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1803919091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803919090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0424f7de89c57074d9df56ae0bbdff1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sample: {fileID: 2606546134562648187, guid: a6df31454d83b3a428caf82ebbb1b036, type: 3}
+  pool: []
+--- !u!4 &1803919092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803919090}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 987203509}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817074418
 GameObject:
@@ -3251,7 +3320,7 @@ PrefabInstance:
     - target: {fileID: 4708754463995743119, guid: 91eb6f136d96c9d4cb23fbcf6c96b6e6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4708754463995743119, guid: 91eb6f136d96c9d4cb23fbcf6c96b6e6,
         type: 3}
@@ -3426,31 +3495,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4456467881667271517, guid: fc7d1e16e15bdda43addba5be7cf77a4,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4456467881667271517, guid: fc7d1e16e15bdda43addba5be7cf77a4,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4456467881667271517, guid: fc7d1e16e15bdda43addba5be7cf77a4,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4456467881667271517, guid: fc7d1e16e15bdda43addba5be7cf77a4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4456467881667271517, guid: fc7d1e16e15bdda43addba5be7cf77a4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 4823028363261459795, guid: fc7d1e16e15bdda43addba5be7cf77a4,
         type: 3}
@@ -4661,7 +4705,19 @@ MonoBehaviour:
   impactAudioPitchVariance: 0.08
   OnPickUp:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9059624412380440864}
+        m_TargetAssemblyTypeName: TrainScript, Assembly-CSharp
+        m_MethodName: ClearEmergencyBrake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDrop:
     m_PersistentCalls:
       m_Calls: []
@@ -5242,9 +5298,14 @@ MonoBehaviour:
   accelerationl: 5
   brakeDeceleration: 12
   noFuelDeceleration: 0.1
-  go: 0
+  go: 1
   hasFuel: 1
   brakes: 0
+  emergencyBrake: 0
+  driveLever: {fileID: 8822797381787556531}
+  OnControlsChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9059624412380440865
 MonoBehaviour:
   m_ObjectHideFlags: 0
