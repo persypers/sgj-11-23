@@ -12,6 +12,8 @@ public class FurnaceDoor : MonoBehaviour
 	public Vector3 lowerClosedPosition;
 	public float doorOpenTime = 1.0f;
 
+	public float Openness => Mathf.InverseLerp( lowerClosedPosition.y, lowerOpenPosition.y, lowerDoor.transform.localPosition.y );
+
 	public bool IsOpen {get; private set;}
 
 	public void Open( bool isOpen )

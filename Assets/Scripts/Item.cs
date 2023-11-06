@@ -26,6 +26,8 @@ public class Item : MonoBehaviour
 	RigidbodyInterpolation cachedInterpolationMode;
 	CollisionDetectionMode cachedCollisionDecetectionMode;
 	
+	public float burn = 0.0f;
+	public bool isBurning = false;
 
 	public void PickedUp()
 	{
