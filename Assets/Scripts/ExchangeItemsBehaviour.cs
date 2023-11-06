@@ -32,7 +32,7 @@ public class ExchangeItemsBehaviour : GrabItemBehaviour
     private void OnItemDestroy(Item item, PlayerCollisionMessageTrigger playerCollisionMessageTrigger)
     {
         if (ParticlesManager.Instance != null)
-            ParticlesManager.Instance.ShowParticlesOnTarget(item.gameObject, 3);
+            ParticlesManager.Instance.ShowParticlesOnTarget(item.gameObject, 10);
         GameObject.Destroy(item.gameObject);
         Debug.Log($"{item.type} destroyed");
         if (returnExchangeItem != null)
