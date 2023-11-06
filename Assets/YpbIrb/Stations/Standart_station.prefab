@@ -103,6 +103,21 @@ MonoBehaviour:
     chanceToSpawn: 0.5
     tries: 1
     onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 8260f66b3370ea1478bbffe7d19cfcad, type: 2}
+    volume: {fileID: 3035771618074698812}
+    chanceToSpawn: 0.5
+    tries: 1
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 8260f66b3370ea1478bbffe7d19cfcad, type: 2}
+    volume: {fileID: 9140277835337947725}
+    chanceToSpawn: 0.5
+    tries: 1
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 8260f66b3370ea1478bbffe7d19cfcad, type: 2}
+    volume: {fileID: 6943101189277158487}
+    chanceToSpawn: 0.5
+    tries: 1
+    onlyYRotation: 0
 --- !u!1 &3577297740092902361
 GameObject:
   m_ObjectHideFlags: 0
