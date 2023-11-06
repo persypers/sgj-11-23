@@ -16,6 +16,8 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 
 	public ObjectPool particles;
 	public int particlesOnBurn = 3;
+	// You should use "FuelRoarIntensity" parameter for currently burning items.
+	// You can browse through them wia FMOD top menu in Unity. FMOD/Event browser/Global parameters
 
 	List< Item > items = new List< Item >();
 
@@ -41,6 +43,7 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 	void Update()
 	{
 		float audioLevel = Mathf.Clamp01( fuel / maxAudioAtFuel );
+		float maxBurn = 0.0f;
 
 		for( int i = items.Count - 1; i >= 0; i-- )
 		{
@@ -57,10 +60,12 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 				items.Remove( item );
 				item.burn = 0.0f;
 			}
+			maxBurn = Mathf.Max( maxBurn, item.burn );
 		}
 
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName( "FuelLevel", audioLevel );
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName( "FurnaceDoorOpen", door.Openness );
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName( "FuelRoarIntensity", maxBurn );
 	}
 
 	private void Consume( Item item )
