@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0f47c780189cf459af03a42f6fc437, type: 3}
+  m_Name: ALL_NPC_Gen
+  m_EditorClassIdentifier: 
+  entries:
+  - prefabOrGenerator: {fileID: 6847865164238925947, guid: 8c6a7d826b7073249b1327cc00e6994a,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 1813271986248679087, guid: 4d586737380bd85489483c03b1c7ba60,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 4391997816923606984, guid: 4d5969c8529c13a478f8941188e0a01f,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 1059100066273247055, guid: 7e5281002db575a40850d2e4e626474f,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 7984810484788266297, guid: ed9d0b27f92c1db46a443c4da17923f4,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 2027074569682829571, guid: e523639f36b0b5049aae11dddead8593,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 1173090927420006179, guid: 0515ec991561ff84f97d649ca64653e6,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 289485184722167302, guid: 74958820234a8a7489dc7d793c45fc58,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5297251429837494077, guid: 38b50acd0be6a8643b5ef0ecd03bfe76,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5660527389101626552, guid: 6580f8a25f18ae0478e5b428e1f56522,
+      type: 3}
+    weight: 1

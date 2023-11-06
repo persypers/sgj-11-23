@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3790632440649222209}
   - component: {fileID: 2577608738243815337}
   m_Layer: 0
-  m_Name: poor_station_1
+  m_Name: Standart_station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,25 +53,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemGenerators:
-  - generator: {fileID: 11400000, guid: dde7caadc7d76a648a4e27e0d5c652e0, type: 2}
+  - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
+    volume: {fileID: 3086900250238110892}
+    chanceToSpawn: 0.8
+    tries: 3
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
+    volume: {fileID: 9084685294877416390}
+    chanceToSpawn: 0.8
+    tries: 3
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 8119cbcbd58dbc24d87401efd908380d, type: 2}
+    volume: {fileID: 3035771618074698812}
+    chanceToSpawn: 0.5
+    tries: 12
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 3477c0b9fc32bb44983a01945fa99bee, type: 2}
+    volume: {fileID: 7335948803501383283}
+    chanceToSpawn: 0.5
+    tries: 3
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 3477c0b9fc32bb44983a01945fa99bee, type: 2}
+    volume: {fileID: 3035771618074698812}
+    chanceToSpawn: 0.5
+    tries: 3
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
     volume: {fileID: 5643288716776029614}
     chanceToSpawn: 0.8
     tries: 2
     onlyYRotation: 0
-  - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
-    volume: {fileID: 7335948803501383283}
-    chanceToSpawn: 0.8
-    tries: 30
-    onlyYRotation: 0
-  - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
-    volume: {fileID: 3086900250238110892}
+  - generator: {fileID: 11400000, guid: 11c42690eb04c4e4fbba7cb5ee7f23d8, type: 2}
+    volume: {fileID: 5643288716776029614}
     chanceToSpawn: 0.5
-    tries: 2
+    tries: 1
     onlyYRotation: 0
-  - generator: {fileID: 11400000, guid: e72bbe96a7073824cb5fea06165236bf, type: 2}
-    volume: {fileID: 3035771618074698812}
-    chanceToSpawn: 1
-    tries: 2
+  - generator: {fileID: 11400000, guid: 8119cbcbd58dbc24d87401efd908380d, type: 2}
+    volume: {fileID: 5643288716776029614}
+    chanceToSpawn: 0.5
+    tries: 1
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 8119cbcbd58dbc24d87401efd908380d, type: 2}
+    volume: {fileID: 5643288716776029614}
+    chanceToSpawn: 0.5
+    tries: 1
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 3477c0b9fc32bb44983a01945fa99bee, type: 2}
+    volume: {fileID: 6943101189277158487}
+    chanceToSpawn: 0.5
+    tries: 1
     onlyYRotation: 0
 --- !u!1 &3577297740092902361
 GameObject:
