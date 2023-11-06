@@ -18,4 +18,13 @@ MonoBehaviour:
     - text: "*\u0432\u0443\u0444*"
     - text: "*\u0432\u0430\u0444*"
     - text: "*\u0430\u0432\u0430\u0444*"
+  - StateName: Branch
+    lines:
+    - text: "*\u0432\u0443\u0444*"
+    - text: "*\u0432\u0430\u0444*"
+    - text: "*\u0430\u0432\u0430\u0444*"
   messageShowCooldown: 3
+  audioClips:
+  - {fileID: 8300000, guid: ff1d2338df6b963448c2b8e034a19f66, type: 3}
+  - {fileID: 8300000, guid: 6759e7c6137f51248822decf76cea085, type: 3}
+  - {fileID: 8300000, guid: be2d01429a336074f829b4050a12cf70, type: 3}

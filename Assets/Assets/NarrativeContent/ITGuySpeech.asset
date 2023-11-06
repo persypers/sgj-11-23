@@ -64,6 +64,7 @@ MonoBehaviour:
         \u0432\u0438\u0434\u0435\u043B\u0438?"
   messageShowCooldown: 3
   audioClips:
-  - {fileID: 8300000, guid: c7e9ceb05df63b147a0c768b6bb62b38, type: 3}
-  - {fileID: 8300000, guid: c0e6ad9f40881d240b59f685348a041d, type: 3}
-  - {fileID: 8300000, guid: a37e7a931457b084db58484231ea626f, type: 3}
+  - {fileID: 8300000, guid: 3c85cf6213583534aa04463c0b3f5f73, type: 3}
+  - {fileID: 8300000, guid: d048aac3122c5b845821b41ae2979e8b, type: 3}
+  - {fileID: 8300000, guid: f4459aaa0085f354db76d9d47d19e33b, type: 3}
+  - {fileID: 8300000, guid: e3139aa3ce124894d877f26f0e3298cd, type: 3}

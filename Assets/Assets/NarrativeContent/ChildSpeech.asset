@@ -64,6 +64,12 @@ MonoBehaviour:
     - text: "\u041E\u0433\u043E! \u0422\u0430\u043A \u043C\u044B \u0441\u0435\u0439\u0447\u0430\u0441
         \u043C\u0435\u0436\u0434\u0443 \u0410\u043D\u0437\u0451\u0431\u0438 \u0438...
         \u0447\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0410\u043D\u0437\u0451\u0431\u0438?"
+  - StateName: Branch
+    lines:
+    - text: "\u041A\u0410\u041A\u0410\u042F \u041F\u0410\u041B\u041A\u0410!"
+  - StateName: Vinyl
+    lines:
+    - text: "\u041B\u0415\u0422\u0410\u042E\u0429\u0410\u042F \u0422\u0410\u0420\u0415\u041B\u041A\u0410!"
   messageShowCooldown: 3
   audioClips:
   - {fileID: 8300000, guid: 377de084056500941bf37eaa6c947417, type: 3}
