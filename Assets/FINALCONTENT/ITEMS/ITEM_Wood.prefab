@@ -116,6 +116,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8179084330536584609, guid: b3a2569b932669343bf661eda444e4de,
+        type: 3}
+      propertyPath: type
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179084330536584609, guid: b3a2569b932669343bf661eda444e4de,
+        type: 3}
+      propertyPath: fuelValue
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8179084330536584611, guid: b3a2569b932669343bf661eda444e4de,
         type: 3}
       propertyPath: m_Name

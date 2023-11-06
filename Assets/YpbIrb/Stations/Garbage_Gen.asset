@@ -15,10 +15,10 @@ MonoBehaviour:
   entries:
   - prefabOrGenerator: {fileID: 4827323693774617429, guid: ec9e679d42f818c489d9839e005f9244,
       type: 3}
-    weight: 0.3
+    weight: 3
   - prefabOrGenerator: {fileID: 6023349514515012558, guid: 6843a8d16beb2ca43aa1761a9dec0b8d,
       type: 3}
-    weight: 1
+    weight: 10
   - prefabOrGenerator: {fileID: 5302946580031333958, guid: 9e0957f0058f1c247a92d0e63b774991,
       type: 3}
-    weight: 0.3
+    weight: 3
