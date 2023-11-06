@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using Fancy;
+using TMPro;
 using UnityEngine;
 
 public class Furnace : Fancy.MonoSingleton< Furnace >
 {
 	public FurnaceDoor door;
+	public TMP_Text fuelLabel;
 	public float itemBurnRate = 1.0f;
-	public float fuel = 10.0f;
-	public float fuelBurnPerSecond = 0.02f;
+	public float fuel = 40.0f;
+	public float fuelBurnPerMinute = 20.0f;
 
 	
 	public float maxAudioAtFuel = 5.0f;
@@ -22,6 +24,8 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 	public AudioSource[] burnSounds;
 
 	List< Item > items = new List< Item >();
+
+	public bool HasFuel => fuel > 0.0f;
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -42,11 +46,26 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 		}
 	}
 
-	public float audioLevel;
+	int fuelInt = -1;
 
 	void Update()
 	{
-		audioLevel = Mathf.Clamp01( fuel / maxAudioAtFuel );
+		const float perMinuteCoef = 1.0f / 60.0f;
+		if( TrainScript.Instance.go && fuel > 0.0f )
+		{
+			fuel -= fuelBurnPerMinute * perMinuteCoef * Time.deltaTime;
+			if( fuel <= 0.0f )
+			{
+				TrainScript.Instance.hasFuel = false;
+			}
+		}
+		int prevLabel = fuelInt;
+		fuelInt = Mathf.Clamp( (int) fuel, 0, 511 );
+		if( fuelInt != prevLabel )
+			fuelLabel.text = System.Convert.ToString( fuelInt, 8 );
+
+
+		float audioLevel = Mathf.Clamp01( fuel / maxAudioAtFuel );
 		float maxBurn = 0.0f;
 
 		for( int i = items.Count - 1; i >= 0; i-- )
@@ -99,6 +118,7 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 		audio.PlayOneShot( audio.clip );
 
 		fuel += item.fuelValue;
+		TrainScript.Instance.hasFuel = true;
 		GameObject.Destroy( item.gameObject );
 	}
 
