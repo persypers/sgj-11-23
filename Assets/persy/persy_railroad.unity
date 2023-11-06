@@ -692,7 +692,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1246
+  m_Name: pb_Mesh-1187042
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1133,11 +1133,11 @@ HingeJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8822797380901948951}
-  m_ConnectedBody: {fileID: 0}
+  m_ConnectedBody: {fileID: 6307975814264795350}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: -1.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: -1.077, y: 1.293, z: -2.8254776}
   m_UseSpring: 1
   m_Spring:
@@ -1747,11 +1747,11 @@ HingeJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134206713}
-  m_ConnectedBody: {fileID: 0}
+  m_ConnectedBody: {fileID: 6307975814264795350}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: -1.5, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 1.078, y: 1.293, z: -2.8254776}
   m_UseSpring: 1
   m_Spring:
@@ -1902,7 +1902,7 @@ PrefabInstance:
     - target: {fileID: 748291882, guid: 2721dabf7a62bca43ad160f584635680, type: 3}
       propertyPath: m_ConnectedBody
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6307975814264795350}
     - target: {fileID: 2029680662074416946, guid: 2721dabf7a62bca43ad160f584635680,
         type: 3}
       propertyPath: m_RootOrder
@@ -2047,6 +2047,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3990134518744076262, guid: 018e60179b6f55a4bb38fc88dffa00c8,
+        type: 3}
+      propertyPath: hinge
+      value: 
+      objectReference: {fileID: 1295761358}
+    - target: {fileID: 5561683089084057759, guid: 018e60179b6f55a4bb38fc88dffa00c8,
+        type: 3}
+      propertyPath: hinge
+      value: 
+      objectReference: {fileID: 2134206714}
     - target: {fileID: 6307975813951614239, guid: 018e60179b6f55a4bb38fc88dffa00c8,
         type: 3}
       propertyPath: hinge
@@ -2054,6 +2064,12 @@ PrefabInstance:
       objectReference: {fileID: 2134206714}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 018e60179b6f55a4bb38fc88dffa00c8, type: 3}
+--- !u!54 &6307975814264795350 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5561683087719163813, guid: 018e60179b6f55a4bb38fc88dffa00c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6307975814264795349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8822797380901948950
 Transform:
   m_ObjectHideFlags: 0
