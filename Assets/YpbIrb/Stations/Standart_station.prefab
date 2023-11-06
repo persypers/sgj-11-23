@@ -37,6 +37,7 @@ Transform:
   - {fileID: 8397543294689922636}
   - {fileID: 7095776110894254571}
   - {fileID: 4230484603502081006}
+  - {fileID: 5169751957248597493}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,67 +57,72 @@ MonoBehaviour:
   - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
     volume: {fileID: 3086900250238110892}
     chanceToSpawn: 0.8
-    tries: 3
+    tries: 6
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
     volume: {fileID: 9084685294877416390}
     chanceToSpawn: 0.8
-    tries: 3
+    tries: 5
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 8119cbcbd58dbc24d87401efd908380d, type: 2}
     volume: {fileID: 3035771618074698812}
     chanceToSpawn: 0.5
-    tries: 12
+    tries: 16
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 3477c0b9fc32bb44983a01945fa99bee, type: 2}
     volume: {fileID: 7335948803501383283}
     chanceToSpawn: 0.5
-    tries: 3
+    tries: 4
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 3477c0b9fc32bb44983a01945fa99bee, type: 2}
     volume: {fileID: 3035771618074698812}
     chanceToSpawn: 0.5
-    tries: 3
+    tries: 4
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
     volume: {fileID: 5643288716776029614}
     chanceToSpawn: 0.8
-    tries: 2
+    tries: 3
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 11c42690eb04c4e4fbba7cb5ee7f23d8, type: 2}
     volume: {fileID: 5643288716776029614}
     chanceToSpawn: 0.5
-    tries: 1
+    tries: 2
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 8119cbcbd58dbc24d87401efd908380d, type: 2}
     volume: {fileID: 5643288716776029614}
     chanceToSpawn: 0.5
-    tries: 1
+    tries: 3
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 8119cbcbd58dbc24d87401efd908380d, type: 2}
     volume: {fileID: 5643288716776029614}
     chanceToSpawn: 0.5
-    tries: 1
+    tries: 2
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 3477c0b9fc32bb44983a01945fa99bee, type: 2}
     volume: {fileID: 6943101189277158487}
     chanceToSpawn: 0.5
-    tries: 1
+    tries: 2
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 8260f66b3370ea1478bbffe7d19cfcad, type: 2}
     volume: {fileID: 3035771618074698812}
     chanceToSpawn: 0.5
-    tries: 1
+    tries: 2
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 8260f66b3370ea1478bbffe7d19cfcad, type: 2}
     volume: {fileID: 9140277835337947725}
     chanceToSpawn: 0.5
-    tries: 1
+    tries: 2
     onlyYRotation: 0
   - generator: {fileID: 11400000, guid: 8260f66b3370ea1478bbffe7d19cfcad, type: 2}
     volume: {fileID: 6943101189277158487}
     chanceToSpawn: 0.5
-    tries: 1
+    tries: 2
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: e72bbe96a7073824cb5fea06165236bf, type: 2}
+    volume: {fileID: 6943101189277158487}
+    chanceToSpawn: 0.7
+    tries: 3
     onlyYRotation: 0
 --- !u!1 &3577297740092902361
 GameObject:
@@ -253,6 +259,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20.263365, y: 3.0496879, z: 12.015251}
   m_Center: {x: -0.49265194, y: -0.7569177, z: -0.48174095}
+--- !u!1 &5618676767342843726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5169751957248597493}
+  - component: {fileID: 4445291618079667827}
+  m_Layer: 13
+  m_Name: coalVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5169751957248597493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5618676767342843726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.24, y: 4.69, z: -9.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3790632440649222209}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4445291618079667827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5618676767342843726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9605312, y: 1.755343, z: 4.1832876}
+  m_Center: {x: 0.07073498, y: -1.4040902, z: -0.16948843}
 --- !u!1 &6430924476294032206
 GameObject:
   m_ObjectHideFlags: 0
