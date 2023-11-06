@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Outline
+  m_Name: LeverHandleOutline
   m_Shader: {fileID: -6465566751694194690, guid: 7c2e259fbbc9b0144a16dad1e77e3354,
     type: 3}
   m_ValidKeywords: []
