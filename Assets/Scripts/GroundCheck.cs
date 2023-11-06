@@ -17,31 +17,29 @@ public class GroundCheck : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if( other.gameObject != me )
+		bool trainVolume = other.gameObject.layer == trainLayer;
+		if( other.gameObject != me && !trainVolume)
 		{
 			count ++;
 		}
 
-		if( other.gameObject.layer == trainLayer )
+		if( trainVolume )
 		{
 			trainCount ++;
-			if( trainCount == 1 )
-				Debug.Log( "Gained Train" );
 		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if( other.gameObject != me)
+		bool trainVolume = other.gameObject.layer == trainLayer;
+		if( other.gameObject != me && !trainVolume)
 		{
 			count--;
 		}
 
-		if( other.gameObject.layer == trainLayer )
+		if( trainVolume )
 		{
 			trainCount --;
-			if( trainCount == 0 )
-				Debug.Log( "Lost Train" );
 		}
 	}
 }
