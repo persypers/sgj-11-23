@@ -15,6 +15,9 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 	public float maxAudioAtFuel = 5.0f;
 	public float audioBumpPerItem = 0.3f;
 
+		// You should use "FuelRoarIntensity" parameter for currently burning items.
+		// You can browse through them wia FMOD top menu in Unity. FMOD/Event browser/Global parameters
+
 	List< Item > items = new List< Item >();
 
 	private void OnTriggerEnter(Collider other)
