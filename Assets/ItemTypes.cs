@@ -38,5 +38,6 @@ public enum ItemTypes
 	Stool = 35,
 	Branch = 36,
 	Phone = 37,
+	Bag1 = 38,
 	Total
 }
