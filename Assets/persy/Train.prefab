@@ -5850,7 +5850,7 @@ MonoBehaviour:
   maxSpeed: 30
   accelerationl: 5
   brakeDeceleration: 12
-  noFuelDeceleration: 0.1
+  noFuelDeceleration: 0.4
   emergyBrakesOnDistanceFromPlayer: 60
   go: 0
   hasFuel: 1
