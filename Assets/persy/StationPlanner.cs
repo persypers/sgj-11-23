@@ -16,6 +16,8 @@ public class StationPlanner : Fancy.MonoSingleton< StationPlanner >
 
 		go.SetActive( true );
 
+		go.GetComponent< StationPopulator >().Populate( tile );
+
 		return go;
 	}
 }
