@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using RigidFps;
@@ -65,6 +66,13 @@ public class World : Fancy.MonoSingleton< World >
 			Player.Instance.Warp( move );
 			sceneryManager.Warp(move);
 
+			var levers = GameObject.FindObjectsOfType< Lever >( false );
+			for( int i = 0; i < levers.Length; i++ )
+			{
+				var hinge = levers[ i ].hinge;
+				//hinge.GetComponent< Rigidbody >().WakeUp();
+			}
+
 			Physics.autoSimulation = false;
 			Physics.Simulate( Time.fixedDeltaTime );
 			Physics.autoSimulation = true;
@@ -95,7 +103,7 @@ public class World : Fancy.MonoSingleton< World >
 			OnTileCreated( tile );
 		}
 
-		if( nextStationTileIndex == absoluteTileIndex && !nextStationEmergencyBrakeCommenced && TrainScript.Instance.IsDriving )
+		if( nextStationTileIndex == absoluteTileIndex && !nextStationEmergencyBrakeCommenced && TrainScript.Instance.go )
 		{
 			// мы в тайле со станцией и ещё не делали остановку на ней
 			var speed = TrainScript.Instance.currentSpeed;
@@ -137,7 +145,7 @@ public class World : Fancy.MonoSingleton< World >
 		}
 	}
 
-	float EstimateBrakingDistance( float currentSpeed, float deceleration )
+	public float EstimateBrakingDistance( float currentSpeed, float deceleration )
 	{
 		float time = currentSpeed / deceleration;
 		return currentSpeed * time - deceleration * time * time * 0.5f;
@@ -145,8 +153,8 @@ public class World : Fancy.MonoSingleton< World >
 
 	int CalculateNextStationTileIndex()
 	{
-		// potom
-		return absoluteTileIndex + 5;
+		float distance = StationPlanner.Instance.PlanNextStationDistance();
+		return absoluteTileIndex + Mathf.CeilToInt( distance / TileSize ) ;
 	}
 
 	

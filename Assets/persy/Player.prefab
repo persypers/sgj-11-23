@@ -517,6 +517,10 @@ MonoBehaviour:
   movementAccel: 20
   airAccel: 5
   jumpForce: 5
+  minReduceSpeedDistanceX: 55
+  maxReducedSpeedDistanceX: 87
+  minReduceSpeedDistanceZ: 200
+  maxReducedSpeedDistanceZ: 250
   followSmoothTime: 0.005
   cameraHeight: 1.5
 --- !u!82 &1272397862697293493
