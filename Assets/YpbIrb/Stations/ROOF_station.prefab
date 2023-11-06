@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3790632440649222209}
   - component: {fileID: 2577608738243815337}
   m_Layer: 0
-  m_Name: NoNPC_quest_items_station
+  m_Name: ROOF_station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,15 +53,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemGenerators:
+  - generator: {fileID: 11400000, guid: dde7caadc7d76a648a4e27e0d5c652e0, type: 2}
+    volume: {fileID: 5643288716776029614}
+    chanceToSpawn: 0.8
+    tries: 2
+    onlyYRotation: 0
   - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
-    volume: {fileID: 3086900250238110892}
+    volume: {fileID: 5643288716776029614}
+    chanceToSpawn: 0.8
+    tries: 30
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: e37a38a8156710441a92aebec7a88e2d, type: 2}
+    volume: {fileID: 5643288716776029614}
     chanceToSpawn: 0.5
     tries: 2
     onlyYRotation: 0
-  - generator: {fileID: 11400000, guid: dde7caadc7d76a648a4e27e0d5c652e0, type: 2}
-    volume: {fileID: 3035771618074698812}
+  - generator: {fileID: 11400000, guid: e72bbe96a7073824cb5fea06165236bf, type: 2}
+    volume: {fileID: 5643288716776029614}
     chanceToSpawn: 0.8
-    tries: 20
+    tries: 4
+    onlyYRotation: 0
+  - generator: {fileID: 11400000, guid: 3477c0b9fc32bb44983a01945fa99bee, type: 2}
+    volume: {fileID: 5643288716776029614}
+    chanceToSpawn: 0.5
+    tries: 3
     onlyYRotation: 0
 --- !u!1 &3577297740092902361
 GameObject:
