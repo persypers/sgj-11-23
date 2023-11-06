@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 3351052422864466018}
   - component: {fileID: 7982621122057710978}
   - component: {fileID: 4630165796703027272}
+  - component: {fileID: 3362156794684139589}
   m_Layer: 8
   m_Name: NPC_Base
   m_TagString: Untagged
@@ -786,6 +787,24 @@ MonoBehaviour:
   itemThrowDelay: 3
   throwForce: 30
   newStateName: Magazine
+--- !u!114 &3362156794684139589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967183589580312152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415c32985c3920a4f8301e0fb7aaf501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 9
+  itemJoint: {fileID: 1967183589520740293}
+  itemTriggerCollider: {fileID: 1967183589486449086}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
 --- !u!1 &1967183589781017378
 GameObject:
   m_ObjectHideFlags: 0
