@@ -143,9 +143,120 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 8d1d535d82c3d494c827ad78d444d602, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}
+--- !u!114 &6847865163462217362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1967183588778717361, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919151356235890211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ea452eaa41378468127fbede55dd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &6847865164159741853 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 1967183589486449086, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919151356235890211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6847865164177030025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1967183589503731114, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
     type: 3}
   m_PrefabInstance: {fileID: 4919151356235890211}
   m_PrefabAsset: {fileID: 0}
+--- !u!153 &6847865164194034150 stripped
+ConfigurableJoint:
+  m_CorrespondingSourceObject: {fileID: 1967183589520740293, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919151356235890211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6847865164238925947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967183589580312152, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919151356235890211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8371005865590086247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847865164238925947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 26
+  itemJoint: {fileID: 6847865164194034150}
+  itemTriggerCollider: {fileID: 6847865164159741853}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Chess
+  playerCollisionMessageTrigger: {fileID: 6847865163462217362}
+--- !u!114 &7367680198720428426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847865164238925947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 14
+  itemJoint: {fileID: 6847865164194034150}
+  itemTriggerCollider: {fileID: 6847865164159741853}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Laptop
+  playerCollisionMessageTrigger: {fileID: 6847865163462217362}
+--- !u!114 &5594442762655693244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847865164238925947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 20
+  itemJoint: {fileID: 6847865164194034150}
+  itemTriggerCollider: {fileID: 6847865164159741853}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Eggs
+  playerCollisionMessageTrigger: {fileID: 6847865163462217362}
+--- !u!114 &5506581005695298417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847865164238925947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9bc76a9cca59148b98a43d0fa163ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 29
+  itemJoint: {fileID: 6847865164194034150}
+  itemTriggerCollider: {fileID: 6847865164159741853}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  exchangeDelay: 3
+  returnExchangeItem: {fileID: 4606648493529423074, guid: cf4d17193e8b86c4b96b2362c0b065c8,
+    type: 3}

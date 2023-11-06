@@ -68,6 +68,12 @@ MonoBehaviour:
         \u0420\u0435\u0448\u0435\u043D\u043E! \u0418 \u043A\u043D\u0438\u0433\u0438
         \u044D\u0442\u0438 \u043C\u043D\u0435 \u0431\u043E\u043B\u044C\u0448\u0435
         \u043D\u0438 \u043A \u0447\u0435\u043C\u0443!"
+  - StateName: Book
+    lines:
+    - text: "\u041A\u043D\u0438\u0433\u0430 \u043B\u0443\u0447\u0448\u0435!"
+  - StateName: Magazine
+    lines:
+    - text: "\u041A\u043D\u0438\u0433\u0430 \u043B\u0443\u0447\u0448\u0435!"
   messageShowCooldown: 3
   audioClips:
   - {fileID: 8300000, guid: 7ee198edc3cc2ef4eaaad7c75188d272, type: 3}

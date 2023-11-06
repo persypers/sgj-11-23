@@ -22,7 +22,7 @@ public class StationPopulator : MonoBehaviour
 			var entry = itemGenerators[ i ];
 			for( int j = 0; j < entry.tries; j++ )
 			{
-				if( entry.chanceToSpawn < 1.0f && Random.Range( 0.0f, 1.0f ) < entry.chanceToSpawn )
+				if( (entry.chanceToSpawn < 1.0f && Random.Range( 0.0f, 1.0f ) < entry.chanceToSpawn) || entry.chanceToSpawn >= 1.0f )
 				{
 					var go = Spawn( entry.generator.Get(), entry.volume, entry.onlyYRotation );
 				}

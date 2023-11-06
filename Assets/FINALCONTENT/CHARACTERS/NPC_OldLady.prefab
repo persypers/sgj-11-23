@@ -78,14 +78,197 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 8d1d535d82c3d494c827ad78d444d602, type: 3}
+    - target: {fileID: 7982621122057710978, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: type
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982621122057710978, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}
+--- !u!114 &2027074569409921002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1967183588778717361, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 535165954196623195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ea452eaa41378468127fbede55dd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &2027074569505119973 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 1967183589486449086, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 535165954196623195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!153 &2027074569606086814 stripped
+ConfigurableJoint:
+  m_CorrespondingSourceObject: {fileID: 1967183589520740293, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 535165954196623195}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2027074569623096049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1967183589503731114, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
     type: 3}
   m_PrefabInstance: {fileID: 535165954196623195}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2027074569682829571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967183589580312152, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 535165954196623195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3121013926900423466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027074569682829571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 7
+  itemJoint: {fileID: 2027074569606086814}
+  itemTriggerCollider: {fileID: 2027074569505119973}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Magazine
+  playerCollisionMessageTrigger: {fileID: 2027074569409921002}
+--- !u!114 &8840879996080284991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027074569682829571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 29
+  itemJoint: {fileID: 2027074569606086814}
+  itemTriggerCollider: {fileID: 2027074569505119973}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Magazine
+  playerCollisionMessageTrigger: {fileID: 2027074569409921002}
+--- !u!114 &6903524549078549720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027074569682829571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 16
+  itemJoint: {fileID: 2027074569606086814}
+  itemTriggerCollider: {fileID: 2027074569505119973}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Plane
+  playerCollisionMessageTrigger: {fileID: 2027074569409921002}
+--- !u!114 &5488581307175362105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027074569682829571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  itemJoint: {fileID: 2027074569606086814}
+  itemTriggerCollider: {fileID: 2027074569505119973}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Coal
+  playerCollisionMessageTrigger: {fileID: 2027074569409921002}
+--- !u!114 &5877576741340161225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027074569682829571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9bc76a9cca59148b98a43d0fa163ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 20
+  itemJoint: {fileID: 2027074569606086814}
+  itemTriggerCollider: {fileID: 2027074569505119973}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  exchangeDelay: 3
+  returnExchangeItem: {fileID: 350870159066272262, guid: 3162390c5e08cb240a5b6d0470ce05b7,
+    type: 3}
+--- !u!114 &6434765400344466575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027074569682829571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e89374d34cda43b7fe0e077d2aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 14
+  itemJoint: {fileID: 2027074569606086814}
+  itemTriggerCollider: {fileID: 2027074569505119973}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  itemThrowDelay: 3
+  throwForce: 30
+  newStateName: Laptop
+--- !u!114 &4002784828744650316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027074569682829571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e89374d34cda43b7fe0e077d2aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 22
+  itemJoint: {fileID: 2027074569606086814}
+  itemTriggerCollider: {fileID: 2027074569505119973}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  itemThrowDelay: 3
+  throwForce: 30
+  newStateName: Popit
 --- !u!1001 &7581950881821480768
 PrefabInstance:
   m_ObjectHideFlags: 0

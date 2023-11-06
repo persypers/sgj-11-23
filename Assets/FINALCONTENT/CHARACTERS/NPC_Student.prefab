@@ -142,6 +142,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Student
       objectReference: {fileID: 0}
+    - target: {fileID: 1967183589580312158, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351052422864466018, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: type
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351052422864466018, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351052422864466018, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: returnExchangeItem
+      value: 
+      objectReference: {fileID: 1242506957827815069, guid: a8b6566209e91b1479a64d987ea87dee,
+        type: 3}
     - target: {fileID: 5783696729948607482, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
         type: 3}
       propertyPath: m_audioClip
@@ -149,9 +170,142 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 8d1d535d82c3d494c827ad78d444d602, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}
+--- !u!1 &5297251429837494077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967183589580312152, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5967068370154903909}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2786955568855766196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297251429837494077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e89374d34cda43b7fe0e077d2aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 15
+  itemJoint: {fileID: 5297251430029186720}
+  itemTriggerCollider: {fileID: 5297251429996300507}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  itemThrowDelay: 3
+  throwForce: 30
+  newStateName: Cans
+--- !u!114 &3267266423149832442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297251429837494077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e89374d34cda43b7fe0e077d2aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  itemJoint: {fileID: 5297251430029186720}
+  itemTriggerCollider: {fileID: 5297251429996300507}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  itemThrowDelay: 3
+  throwForce: 30
+  newStateName: Coal
+--- !u!114 &433285873878427444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297251429837494077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026e89374d34cda43b7fe0e077d2aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 11
+  itemJoint: {fileID: 5297251430029186720}
+  itemTriggerCollider: {fileID: 5297251429996300507}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  itemThrowDelay: 3
+  throwForce: 30
+  newStateName: Coal
+--- !u!114 &8555794532578918430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297251429837494077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 22
+  itemJoint: {fileID: 5297251430029186720}
+  itemTriggerCollider: {fileID: 5297251429996300507}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Popit
+  playerCollisionMessageTrigger: {fileID: 5297251431704652244}
+--- !u!114 &7043298238088681258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297251429837494077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  itemJoint: {fileID: 5297251430029186720}
+  itemTriggerCollider: {fileID: 5297251429996300507}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Guitar
+  playerCollisionMessageTrigger: {fileID: 5297251431704652244}
+--- !u!135 &5297251429996300507 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 1967183589486449086, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5967068370154903909}
+  m_PrefabAsset: {fileID: 0}
+--- !u!153 &5297251430029186720 stripped
+ConfigurableJoint:
+  m_CorrespondingSourceObject: {fileID: 1967183589520740293, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5967068370154903909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5297251430046129359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1967183589503731114, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
     type: 3}
   m_PrefabInstance: {fileID: 5967068370154903909}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5297251431704652244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1967183588778717361, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5967068370154903909}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ea452eaa41378468127fbede55dd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

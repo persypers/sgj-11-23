@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0f47c780189cf459af03a42f6fc437, type: 3}
+  m_Name: FUEL_Gen
+  m_EditorClassIdentifier: 
+  entries:
+  - prefabOrGenerator: {fileID: 7811186069888815525, guid: 10e421dd811b9c24c996d8aeca743254,
+      type: 3}
+    weight: 10
+  - prefabOrGenerator: {fileID: 4606648493529423072, guid: cf4d17193e8b86c4b96b2362c0b065c8,
+      type: 3}
+    weight: 2
