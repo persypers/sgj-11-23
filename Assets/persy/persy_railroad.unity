@@ -3068,7 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0424f7de89c57074d9df56ae0bbdff1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sample: {fileID: 2606546134562648187, guid: a6df31454d83b3a428caf82ebbb1b036, type: 3}
+  sample: {fileID: 2606546134562648187, guid: 26cdd278ce4fa9b4fbd3f6afb7be216e, type: 3}
   pool: []
 --- !u!4 &1803919092
 Transform:

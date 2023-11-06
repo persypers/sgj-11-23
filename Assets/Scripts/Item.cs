@@ -84,7 +84,7 @@ public class Item : MonoBehaviour
 
 	void OnCollisionEnter( Collision collision )
 	{
-		if( impactAudio != null )
+		if( impactAudio != null && impactAudio.clip != null )
 		{
 			//Debug.Log( collision.impulse.sqrMagnitude);
 			float volume = Mathf.Clamp01( Mathf.InverseLerp( minImpactAudioImpulse, maxImpactAudioImpulse, collision.impulse.sqrMagnitude ) );
