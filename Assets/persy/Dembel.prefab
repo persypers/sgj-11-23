@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4708754463540560258}
   - component: {fileID: 4708754463540560256}
-  - component: {fileID: 4708754463540560259}
   m_Layer: 7
   m_Name: guitarTrigger
   m_TagString: Untagged
@@ -46,26 +45,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4708754463540560259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4708754463540560261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279a405df5de33b438c25a8733dea841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  action:
-    m_PersistentCalls:
-      m_Calls: []
-  actionWithItem:
-    m_PersistentCalls:
-      m_Calls: []
-  allowHeldItems: 0
 --- !u!1 &4708754463995743108
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,8 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   itemJoint: {fileID: 8012946598069953306}
-  itemTrigger: {fileID: 4708754463540560259}
+  itemTriggerCollider: {fileID: 4708754463540560256}
   setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
   guitarSongSource: {fileID: 4708754463995743117}
   guitarPickupSource: {fileID: 4708754463995743114}
 --- !u!33 &4708754463995743118
@@ -528,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 5294150350037350526, guid: 884fe17d73a051c4891cf5d0fadf2826,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 2524
+      value: 2527
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884fe17d73a051c4891cf5d0fadf2826, type: 3}
