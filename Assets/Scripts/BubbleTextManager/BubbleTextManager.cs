@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Fancy;
 using UnityEngine;
 using System.Linq;
-using System;
 
 public struct BubbleTextMessage
 {
@@ -70,12 +69,14 @@ public class BubbleTextManager : Fancy.MonoSingleton<BubbleTextManager>
             if (!messageExecuteState.Contains(messageObj.target))
             {
                 GameObject textGameObject = messagesPool.Get();
+
                 textGameObject.SetActive(true);
                 BubbleText bubbleText = textGameObject.GetComponent<BubbleText>();
                 if (bubbleText != null)
                 {
                     messageExecuteState.Add(messageObj.target);
                     bubbleText.OnShowBubbleText(messageObj);
+                    PlayRandomTargetSound(messageObj.target);
                     StartCoroutine(AsyncObjectDisable(messageObj, textGameObject));
                 }
                 messagesToRemove.Add(messageObj);
@@ -85,6 +86,29 @@ public class BubbleTextManager : Fancy.MonoSingleton<BubbleTextManager>
         foreach (BubbleTextMessage messageObj in messagesToRemove)
         {
             messageQueue.Remove(messageObj);
+        }
+    }
+
+    private void PlayRandomTargetSound(GameObject target)
+    {
+        AudioSource audioSource = target.GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = target.AddComponent<AudioSource>();
+        }
+
+        PlayerCollisionMessageTrigger playerCollisionMessageTrigger = target.GetComponentInChildren<PlayerCollisionMessageTrigger>();
+
+        if (playerCollisionMessageTrigger != null)
+        {
+            List<AudioClip> audioClips = playerCollisionMessageTrigger.textDataAsset.audioClips;
+
+            if (audioClips.Count > 0)
+            {
+                AudioClip randomClip = audioClips[Random.Range(0, audioClips.Count)];
+                audioSource.clip = randomClip;
+                audioSource.Play();
+            }
         }
     }
 

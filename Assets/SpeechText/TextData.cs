@@ -5,6 +5,11 @@ using System.Collections.Generic;
 namespace SpeechText
 {
     [Serializable]
+    public class AudioLine
+    {
+        public AudioClip audioClip; // Ссылка на аудиофайл
+    }
+    [Serializable]
     public class TextLine
     {
         public string text;
@@ -22,7 +27,7 @@ namespace SpeechText
     {
         public List<TextSection> states = new List<TextSection>();
         public float messageShowCooldown = 3;
-
+        public List<AudioClip> audioClips = new List<AudioClip>(); // Список аудиофайлов
         public List<TextLine> GetTextLinesByStateName(string stateName)
         {
             return states.Find(item => item.StateName == stateName)?.lines ?? new List<TextLine>();
