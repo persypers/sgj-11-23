@@ -101,9 +101,9 @@ public class World : Fancy.MonoSingleton< World >
 			var speed = TrainScript.Instance.currentSpeed;
 			if( speed > 0.5f * TrainScript.Instance.maxSpeed )
 			{
-				var bDist = EstimateBrakingDistance( speed, TrainScript.Instance.brakeDeceleration )
-					- stationStopDistanceCorrection;
-				if( bDist * bDist <= ( TrainScript.Instance.transform.position - nextStation.transform.position ).sqrMagnitude )
+				var bDist = EstimateBrakingDistance( speed, TrainScript.Instance.brakeDeceleration );
+				var distanceToStationSqr = ( TrainScript.Instance.transform.position - ( nextStation.transform.position + Vector3.forward * stationStopDistanceCorrection ) ).sqrMagnitude;
+				if( bDist * bDist >= distanceToStationSqr )
 				{
 					TrainScript.Instance.DoEmergencyBrake();
 					nextStationEmergencyBrakeCommenced = true;
