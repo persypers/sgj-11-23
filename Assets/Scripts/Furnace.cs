@@ -19,6 +19,8 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 	// You should use "FuelRoarIntensity" parameter for currently burning items.
 	// You can browse through them wia FMOD top menu in Unity. FMOD/Event browser/Global parameters
 
+	public AudioSource[] burnSounds;
+
 	List< Item > items = new List< Item >();
 
 	private void OnTriggerEnter(Collider other)
@@ -77,7 +79,7 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 			var go = particles.Get();
 			Vector3 pos = new Vector3(
 				Random.Range( bounds.min.x, bounds.max.x ),
-				Random.Range( bounds.min.y, bounds.max.y ) - 0.4f,
+				Random.Range( bounds.min.y, bounds.max.y ) - 0.6f,
 				Random.Range( bounds.min.z, bounds.max.z ) );
 			go.transform.position = pos;
 			go.transform.localRotation = Quaternion.Euler(
@@ -88,6 +90,10 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 			go.GetComponentInChildren< ParticleSystem >().Play();
 			StartCoroutine( DisableParticles( go ) );
 		}
+		
+		var audio = burnSounds[ Random.Range( 0, burnSounds.Length ) ];
+		audio.PlayOneShot( audio.clip );
+
 		fuel += item.fuelValue;
 		GameObject.Destroy( item.gameObject );
 	}
