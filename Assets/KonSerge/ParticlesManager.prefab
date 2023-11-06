@@ -71,7 +71,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sample
       value: 
-      objectReference: {fileID: 147524540901542499, guid: 20ae616c7237a8a46860bdedf0eb3b24,
+      objectReference: {fileID: 6246676621943426578, guid: be1f8ca3a25f9a6478811e5121cbd78e,
         type: 3}
     - target: {fileID: 8433461250234019558, guid: c39512391fbdda3488f9ade1b28e09e6,
         type: 3}
@@ -112,4 +112,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlesPool: {fileID: 4451360315571216574}
-  burnSounds: []
