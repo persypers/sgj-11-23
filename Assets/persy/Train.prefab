@@ -5852,9 +5852,9 @@ MonoBehaviour:
   brakeDeceleration: 12
   noFuelDeceleration: 0.1
   emergyBrakesOnDistanceFromPlayer: 60
-  go: 1
+  go: 0
   hasFuel: 1
-  brakes: 0
+  brakes: 1
   emergencyBrake: 0
   driveLever: {fileID: 3990134518744076262}
   OnControlsChanged:
