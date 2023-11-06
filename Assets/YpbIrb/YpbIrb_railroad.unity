@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 676436769}
   - component: {fileID: 676436771}
   m_Layer: 0
-  m_Name: Tree1Pool
+  m_Name: StrangeThingPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   objectPool: {fileID: 676436769}
   nearest_x_dist: 50
   furtherst_x_dist: 100
-  weight: 10
+  weight: 100
   minScale: 0.8
   maxScale: 3
   minTiltAngle: -20
@@ -1557,7 +1557,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1558
+  m_Name: pb_Mesh266524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1938,8 +1938,8 @@ MonoBehaviour:
   - {fileID: 806030299}
   - {fileID: 346491638}
   - {fileID: 1714645833}
-  min_weight: 20
-  max_weight: 40
+  min_weight: 50
+  max_weight: 100
   startTile: {fileID: 1239030104}
   playTestCoro: 0
   GroundTiles: []
@@ -2016,6 +2016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1832842bff22b4885a81a1623273d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coalFuelOnBoard: 0
+  totalFuelOnBoard: 0
   stationGenerator: {fileID: 1803919091}
 --- !u!1 &1001741103
 GameObject:
@@ -2350,7 +2352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0424f7de89c57074d9df56ae0bbdff1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sample: {fileID: 1981250090286304824, guid: 4cab76a21eae78b4ebb8bcf885818d53, type: 3}
+  sample: {fileID: 394394823513010317, guid: 9d3e33b37ce01f646acbf030287bcc9c, type: 3}
   pool: []
 --- !u!4 &1451552119
 Transform:
@@ -3621,6 +3623,8 @@ MonoBehaviour:
   OnItemJointBreak:
     m_PersistentCalls:
       m_Calls: []
+  burn: 0
+  isBurning: 0
 --- !u!54 &2134206716
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4732,6 +4736,8 @@ MonoBehaviour:
   OnItemJointBreak:
     m_PersistentCalls:
       m_Calls: []
+  burn: 0
+  isBurning: 0
 --- !u!135 &8822797380901948971
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5313,6 +5319,7 @@ MonoBehaviour:
   accelerationl: 5
   brakeDeceleration: 12
   noFuelDeceleration: 0.1
+  emergyBrakesOnDistanceFromPlayer: 70
   go: 1
   hasFuel: 1
   brakes: 0
