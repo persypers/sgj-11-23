@@ -13,6 +13,7 @@ public class PlayerCollisionMessageTrigger : MonoBehaviour
     public GameObject objectToTrigger; // Указание объекта, который запустит действие
     private bool isReadyToTalk = true;
 
+    
     private void OnTriggerStay(Collider other)
     {
         if (isReadyToTalk && other.gameObject == objectToTrigger)
@@ -26,6 +27,11 @@ public class PlayerCollisionMessageTrigger : MonoBehaviour
                 StartCoroutine(AsyncWaitCooldown(textDataAsset.messageShowCooldown));
             }
         }
+    }
+
+    public void SetCurrentState(string newState)
+    {
+        currentState = newState;
     }
 
     private IEnumerator AsyncWaitCooldown(float cooldown)

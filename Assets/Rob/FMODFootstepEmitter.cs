@@ -77,6 +77,6 @@ public class FMODFootstepEmitter : MonoBehaviour
     public void NotifyLanded()
     {
         hasRecentlyLanded = true;
-        Debug.Log("Landed!");
+        // Debug.Log("Landed!");
     }
 }
