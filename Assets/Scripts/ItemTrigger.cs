@@ -6,8 +6,9 @@ using UnityEngine.Events;
 public class ItemTrigger : MonoBehaviour
 {
 	public ItemTypes type;
-	public UnityEvent action;
-	public UnityEvent< Item > actionWithItem;
+	public UnityEvent action = new UnityEvent();
+	public UnityEvent< Item > actionWithItem = new UnityEvent<Item>();
+	public UnityEvent< Item > itemExit = new UnityEvent<Item>();
 	public bool allowHeldItems = false;
 	private void OnTriggerEnter(Collider other)
 	{
@@ -40,6 +41,7 @@ public class ItemTrigger : MonoBehaviour
 		if( item.type == type )
 		{
 			item.OnDrop.RemoveListener( Trigger );
+			itemExit.Invoke( item );
 		}
 	}
 }

@@ -164,6 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7649135249738513363}
   - component: {fileID: 7649135249738513360}
+  - component: {fileID: 1267158105}
   - component: {fileID: 7649135249738513362}
   - component: {fileID: 7649135249738513373}
   - component: {fileID: 7649135249738513372}
@@ -208,8 +209,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 5
   itemJoint: {fileID: 4921379680830296902}
-  itemTrigger: {fileID: 7649135250203455967}
+  itemTriggerCollider: {fileID: 7649135250203455964}
   setIgnoreGravity: 1
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+--- !u!114 &1267158105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649135249738513368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415c32985c3920a4f8301e0fb7aaf501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  itemJoint: {fileID: 4921379680830296902}
+  itemTriggerCollider: {fileID: 7649135250203455964}
+  setIgnoreGravity: 1
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
 --- !u!33 &7649135249738513362
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -342,7 +363,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7649135250203455966}
   - component: {fileID: 7649135250203455964}
-  - component: {fileID: 7649135250203455967}
   m_Layer: 7
   m_Name: ItemTrigger
   m_TagString: Untagged
@@ -378,23 +398,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7649135250203455967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7649135250203455961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279a405df5de33b438c25a8733dea841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  action:
-    m_PersistentCalls:
-      m_Calls: []
-  actionWithItem:
-    m_PersistentCalls:
-      m_Calls: []
-  allowHeldItems: 0
