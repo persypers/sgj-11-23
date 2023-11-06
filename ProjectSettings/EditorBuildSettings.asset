@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/RigidFPS/Rigid.unity
     guid: 54e48bd6ddfa84f45a02509e116d9fe7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/YpbIrb/YpbIrb_railroad.unity
-    guid: 01872fc9816b30644b23e0fb52fe5bc5
+    path: Assets/persy/persy_railroad.unity
+    guid: 84d269853c43dbc49ab01d831cdee0a8
   m_configObjects: {}
