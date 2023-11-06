@@ -96486,6 +96486,7 @@ GameObject:
   - component: {fileID: 7196284282818542559}
   - component: {fileID: 3077655228432511991}
   - component: {fileID: 6245288025017327511}
+  - component: {fileID: 4099840568897110489}
   m_Layer: 10
   m_Name: StartingTile
   m_TagString: Untagged
@@ -96579,6 +96580,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7784735787272273914, guid: 03adecbcc5c3b8e4a906d7b29422c548, type: 3}
+--- !u!114 &4099840568897110489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541748078039783641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40399c5730c230c45b2855fbe283ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
 --- !u!1 &6544157537908215147
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using FMOD.Studio;
+using UnityEngine.Events;
+using UnityEditor.ShaderGraph;
 
 public class TrainScript : Fancy.MonoSingleton< TrainScript >
 {
@@ -14,11 +16,16 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 	public bool go = false;
 	public bool hasFuel = true;
 	public bool brakes = false;
+	public bool emergencyBrake = false;
 	
 	Rigidbody body;
 
 	public Vector3 currentVelocity => body.velocity;
 	public float currentSpeed => currentVelocity.magnitude;
+
+	public Lever driveLever;
+
+	public UnityEvent OnControlsChanged;
 
 	void Start()
 	{
@@ -27,8 +34,27 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 
 	public void IControlTheTrain( bool enabled )
 	{
+		if( emergencyBrake )
+			return;
+
+		bool wasEnabled = go;
 		go = enabled;
 		brakes = !enabled;
+		driveLever.SetNoCallback( enabled );
+		if( wasEnabled != enabled )
+			OnControlsChanged.Invoke();
+	}
+
+	public void DoEmergencyBrake()
+	{
+		IControlTheTrain( false );
+		emergencyBrake = true;
+	}
+
+	// рычаг газа/тормоза вызывает это, когда игрок берётся за него
+	public void ClearEmergencyBrake()
+	{
+		emergencyBrake = false;
 	}
 
 	void FixedUpdate()

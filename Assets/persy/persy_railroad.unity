@@ -1550,7 +1550,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-306824
+  m_Name: pb_Mesh-15950
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1962,12 +1962,15 @@ MonoBehaviour:
   WarpTriggerDistance: 600
   TileSize: 200
   WarpTiles: 4
+  ForwardViewDistanceInTiles: 3
+  BackViewDistanceInTiles: 3
   physicsSearchHeight: 64
   warpLayers:
     serializedVersion: 2
     m_Bits: 11009
   sceneryManager: {fileID: 987203510}
-  onTile: 1
+  relativeTileIndex: 0
+  absoluteTileIndex: 0
 --- !u!114 &987203513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5242,9 +5245,14 @@ MonoBehaviour:
   accelerationl: 5
   brakeDeceleration: 12
   noFuelDeceleration: 0.1
-  go: 0
+  go: 1
   hasFuel: 1
   brakes: 0
+  emergencyBrake: 0
+  driveLever: {fileID: 8822797381787556531}
+  OnControlsChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9059624412380440865
 MonoBehaviour:
   m_ObjectHideFlags: 0

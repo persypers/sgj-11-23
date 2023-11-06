@@ -37,6 +37,17 @@ public class Lever : MonoBehaviour
 		OnSwitched();
 	}
 
+	// как Set, только не вызываем OnSwitched, когда нужно просто поменять логическое положение рычага, но не вызывать действие
+	public void SetNoCallback( bool value )
+	{
+		if( value == IsOn )
+			return;
+		IsOn = value;
+		var spring = hinge.spring;
+		spring.targetPosition = IsOn ? angle : -angle;
+		hinge.spring = spring;
+	}
+
 	virtual public void OnSwitched()
 	{
 		if( IsOn )
