@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0f47c780189cf459af03a42f6fc437, type: 3}
+  m_Name: NPC_Gen
+  m_EditorClassIdentifier: 
+  entries:
+  - prefabOrGenerator: {fileID: 289485184722167302, guid: 74958820234a8a7489dc7d793c45fc58,
+      type: 3}
+    weight: 1
+  - prefabOrGenerator: {fileID: 5297251429837494077, guid: 38b50acd0be6a8643b5ef0ecd03bfe76,
+      type: 3}
+    weight: 0.6
+  - prefabOrGenerator: {fileID: 2027074569682829571, guid: e523639f36b0b5049aae11dddead8593,
+      type: 3}
+    weight: 1.2
