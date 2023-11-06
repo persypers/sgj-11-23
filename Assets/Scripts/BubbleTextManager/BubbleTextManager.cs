@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Fancy;
 using UnityEngine;
+using System.Linq;
+using System;
 
 public struct BubbleTextMessage
 {
@@ -39,6 +41,26 @@ public class BubbleTextManager : Fancy.MonoSingleton<BubbleTextManager>
         ExecuteShowText();
     }
 
+    public void DropNPCMessagesQueue(GameObject targetNPC)
+    {
+        messageQueue = messageQueue.Where(item => item.target != targetNPC).ToList();
+        messageExecuteState.Remove(targetNPC);
+        RemoveMessageByObject(targetNPC);
+    }
+
+    public void RemoveMessageByObject(GameObject target)
+    {
+        var pool = messagesPool.pool;
+        foreach (GameObject poolObject in pool)
+        {
+            var bubbleText = poolObject.GetComponent<BubbleText>();
+            if (bubbleText.GetCurrentTarget() == target)
+            {
+                poolObject.SetActive(false);
+            }
+        }
+    }
+
     private void ExecuteShowText()
     {
         List<BubbleTextMessage> messagesToRemove = new List<BubbleTextMessage>();
@@ -50,7 +72,6 @@ public class BubbleTextManager : Fancy.MonoSingleton<BubbleTextManager>
                 GameObject textGameObject = messagesPool.Get();
                 textGameObject.SetActive(true);
                 BubbleText bubbleText = textGameObject.GetComponent<BubbleText>();
-
                 if (bubbleText != null)
                 {
                     messageExecuteState.Add(messageObj.target);

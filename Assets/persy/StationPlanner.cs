@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StationPlanner : Fancy.MonoSingleton< StationPlanner >
 {
+	public float coalFuelOnBoard = 0;
+	public float totalFuelOnBoard = 0;
 	public Fancy.ObjectPool stationGenerator;
 
 	public GameObject SpawnStation( TileData tile )
@@ -19,5 +21,14 @@ public class StationPlanner : Fancy.MonoSingleton< StationPlanner >
 		go.GetComponent< StationPopulator >().Populate( tile );
 
 		return go;
+	}
+
+	public void ChangeFuelOnBoard( float amount, bool isCoal )
+	{
+		if( isCoal )
+		{
+			coalFuelOnBoard += amount;
+		}
+		totalFuelOnBoard += amount;
 	}
 }

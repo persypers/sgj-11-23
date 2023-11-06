@@ -5,6 +5,7 @@ using UnityEngine.Video;
 using FMOD.Studio;
 using UnityEngine.Events;
 using UnityEditor.ShaderGraph;
+using RigidFps;
 
 public class TrainScript : Fancy.MonoSingleton< TrainScript >
 {
@@ -12,6 +13,8 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 	public float accelerationl = 5.0f;
 	public float brakeDeceleration = 12.0f;
 	public float noFuelDeceleration = 0.1f;
+
+	public float emergyBrakesOnDistanceFromPlayer = 70.0f;
 	
 	public bool go = false;
 	public bool hasFuel = true;
@@ -79,6 +82,13 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 
 	void Update()
 	{
+		if( !emergencyBrake && go && hasFuel )
+		{
+			var distanceToPlayerSqr = ( transform.position - Player.Instance.transform.position ).sqrMagnitude;
+			if( distanceToPlayerSqr > emergyBrakesOnDistanceFromPlayer * emergyBrakesOnDistanceFromPlayer )
+				DoEmergencyBrake();
+		}
+
 		//Fmod.SetParameter( "skorost" ) = currentSpeed / maxSpeed;
 		// Calculate the normalized speed (0 to 1) of the train
     	float normalizedSpeed = currentSpeed / maxSpeed;

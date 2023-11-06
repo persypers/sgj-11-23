@@ -7,6 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8179084330536584608, guid: b3a2569b932669343bf661eda444e4de,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179084330536584608, guid: b3a2569b932669343bf661eda444e4de,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179084330536584608, guid: b3a2569b932669343bf661eda444e4de,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.43
+      objectReference: {fileID: 0}
     - target: {fileID: 8179084330536584609, guid: b3a2569b932669343bf661eda444e4de,
         type: 3}
       propertyPath: type
@@ -15,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 8179084330536584611, guid: b3a2569b932669343bf661eda444e4de,
         type: 3}
       propertyPath: m_Name
-      value: ITEM_Bag
+      value: ITEM_Bag_1
       objectReference: {fileID: 0}
     - target: {fileID: 8179084330536584634, guid: b3a2569b932669343bf661eda444e4de,
         type: 3}

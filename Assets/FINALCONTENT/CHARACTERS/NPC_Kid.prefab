@@ -154,25 +154,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1967183589580312158, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
         type: 3}
+      propertyPath: type
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967183589580312158, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967183589580312158, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: nonUnique
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967183589580312158, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: newStateName
+      value: Magazine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1967183589580312153, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}
---- !u!65 &7984810484720670785 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 1967183589781017376, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
-    type: 3}
-  m_PrefabInstance: {fileID: 8467728109284035425}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7984810484788266297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1967183589580312152, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
     type: 3}
   m_PrefabInstance: {fileID: 8467728109284035425}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7014701614242910386
+--- !u!114 &5627721700801084100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,17 +190,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 7984810484788266297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d8c1d5861dbb964db8021d2aa53f32a, type: 3}
+  m_Script: {fileID: 11500000, guid: 026e89374d34cda43b7fe0e077d2aa98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 8
   itemJoint: {fileID: 7984810484998833316}
-  itemTriggerCollider: {fileID: 7984810484720670785}
+  itemTriggerCollider: {fileID: 7984810484964940511}
   setIgnoreGravity: 0
   nonUnique: 0
   allowTriggerOnPlayerHeldItem: 0
   itemThrowDelay: 3
   throwForce: 30
+  newStateName: Ball
+--- !u!135 &7984810484964940511 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 1967183589486449086, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 8467728109284035425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7984810484982222539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1967183589503731114, guid: 9bbaa4444dd13ac4088e899ba4604ccf,

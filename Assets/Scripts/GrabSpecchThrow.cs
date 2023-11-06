@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class GrabSpecchThrow : GrabItemBehaviour
 {
-    public float itemThrowDelay = 3;
-    public float throwForce = 30;
+	public float itemThrowDelay = 3;
+	public float throwForce = 30;
 	public string newStateName = "Magazine"; // The new speech state name when NPC gets an item
 
-    public override IEnumerator DoBehaviour(Item item)
-    {
-        yield return base.DoBehaviour(item);
+	public override IEnumerator DoBehaviour(Item item)
+	{
+		yield return base.DoBehaviour(item);
 
-		var playerCollisionMessageTrigger = GetComponentInChildren< PlayerCollisionMessageTrigger >();
+		var playerCollisionMessageTrigger = GetComponentInChildren<PlayerCollisionMessageTrigger>();
 		if (playerCollisionMessageTrigger != null)
 			playerCollisionMessageTrigger.SetCurrentState(newStateName);
-
+		var textLines = playerCollisionMessageTrigger.textDataAsset.GetTextLinesByStateName(newStateName);
+		BubbleTextManager.Instance.DropNPCMessagesQueue(gameObject);
+		BubbleTextManager.Instance.OnAddMessageToQueue(
+					new BubbleTextMessage
+					{
+						messageText = textLines[Random.Range(0, textLines.Count)].text,
+						showDuration = playerCollisionMessageTrigger.showDuration,
+						target = gameObject
+					});
 		yield return new WaitForSeconds(itemThrowDelay);
 
 		if (playerCollisionMessageTrigger != null)
@@ -28,14 +36,14 @@ public class GrabSpecchThrow : GrabItemBehaviour
 		Debug.Log("Item thrown");
 	}
 
-    public override void OnBehaviourCanceled(Item item)
-    {
-		var playerCollisionMessageTrigger = GetComponentInChildren< PlayerCollisionMessageTrigger >();
-        // Reset the speech state if the behavior is canceled
-        if (playerCollisionMessageTrigger != null)
-        {
-            playerCollisionMessageTrigger.SetCurrentState("Default"); // Change "Default" to the appropriate default speech state
-        }
+	public override void OnBehaviourCanceled(Item item)
+	{
+		var playerCollisionMessageTrigger = GetComponentInChildren<PlayerCollisionMessageTrigger>();
+		// Reset the speech state if the behavior is canceled
+		if (playerCollisionMessageTrigger != null)
+		{
+			playerCollisionMessageTrigger.SetCurrentState("Default"); // Change "Default" to the appropriate default speech state
+		}
 	}
 
 }

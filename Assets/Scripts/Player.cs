@@ -76,6 +76,7 @@ namespace RigidFps
 		float handRaycastHeight;
 		float footstepDistanceCounter;
 
+		const float maxYSpeedForJump = 2.5f;
 		const float k_JumpGroundingPreventionTime = 0.2f;
 		const float k_GroundCheckDistanceInAir = 0.07f;
 
@@ -119,7 +120,7 @@ namespace RigidFps
 
 			if( jumpTimeout > 0.0f )
 				jumpTimeout -= Time.deltaTime;
-			if( groundCheck.IsGrounded && inputHandler.GetJumpInputDown() && jumpTimeout <= 0.0f )
+			if( groundCheck.IsGrounded && inputHandler.GetJumpInputDown() && jumpTimeout <= 0.0f && rigidbody.velocity.y < maxYSpeedForJump )
 				doJump = true;
 
 			if( IsGrounded )
@@ -144,11 +145,10 @@ namespace RigidFps
 			worldspaceMoveInput = rotationRoot.TransformVector(inputHandler.GetMoveInput());
 		}
 		
-		
-        void FixedUpdate()
-        {
-            HandleCharacterMovement(Time.fixedDeltaTime);
-        }
+		void FixedUpdate()
+		{
+			HandleCharacterMovement(Time.fixedDeltaTime);
+		}
 
 		void LateUpdate()
 		{
