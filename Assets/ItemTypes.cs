@@ -39,5 +39,6 @@ public enum ItemTypes
 	Branch = 36,
 	Phone = 37,
 	Bag1 = 38,
+	Kid = 39,
 	Total
 }
