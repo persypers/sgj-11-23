@@ -435,6 +435,8 @@ MonoBehaviour:
   OnItemJointBreak:
     m_PersistentCalls:
       m_Calls: []
+  burn: 0
+  isBurning: 0
 --- !u!114 &1967183589580312158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +659,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c9b973ec14061d5458635080a9ac827c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -703,7 +705,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

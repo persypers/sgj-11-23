@@ -172,6 +172,11 @@ PrefabInstance:
       propertyPath: newStateName
       value: Magazine
       objectReference: {fileID: 0}
+    - target: {fileID: 5783696729948607482, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e9a10e877f8f4242988735adff9e2b1, type: 3}
     m_RemovedComponents:
     - {fileID: 1967183589580312153, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}

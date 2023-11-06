@@ -142,6 +142,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Student
       objectReference: {fileID: 0}
+    - target: {fileID: 5783696729948607482, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d1d535d82c3d494c827ad78d444d602, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbaa4444dd13ac4088e899ba4604ccf, type: 3}
 --- !u!4 &5297251430046129359 stripped

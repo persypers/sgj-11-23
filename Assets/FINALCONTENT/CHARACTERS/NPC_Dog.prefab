@@ -11,7 +11,8 @@ PrefabInstance:
         type: 3}
       propertyPath: textDataAsset
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 88c0bdbd9c1b54c4db02c19152cc64f4,
+        type: 2}
     - target: {fileID: 1967183589520740287, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
         type: 3}
       propertyPath: m_LocalPosition.y
