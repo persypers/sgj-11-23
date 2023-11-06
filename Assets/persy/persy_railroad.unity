@@ -187,6 +187,9 @@ MonoBehaviour:
   actionWithItem:
     m_PersistentCalls:
       m_Calls: []
+  itemExit:
+    m_PersistentCalls:
+      m_Calls: []
   allowHeldItems: 1
 --- !u!135 &51263784
 SphereCollider:
@@ -263,6 +266,9 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   actionWithItem:
+    m_PersistentCalls:
+      m_Calls: []
+  itemExit:
     m_PersistentCalls:
       m_Calls: []
   allowHeldItems: 1
@@ -611,6 +617,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  disableSet: 0
 --- !u!65 &391470539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1977,7 +1984,7 @@ MonoBehaviour:
   sceneryManager: {fileID: 987203510}
   relativeTileIndex: 0
   absoluteTileIndex: 0
-  stationStopDistanceCorrection: 25
+  stationStopDistanceCorrection: -40
 --- !u!114 &987203513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4814,6 +4821,9 @@ MonoBehaviour:
   actionWithItem:
     m_PersistentCalls:
       m_Calls: []
+  itemExit:
+    m_PersistentCalls:
+      m_Calls: []
   allowHeldItems: 1
 --- !u!4 &8822797381787556529
 Transform:
@@ -4877,6 +4887,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  disableSet: 0
 --- !u!1 &8822797381787556538
 GameObject:
   m_ObjectHideFlags: 0
@@ -5188,6 +5199,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   actionWithItem:
+    m_PersistentCalls:
+      m_Calls: []
+  itemExit:
     m_PersistentCalls:
       m_Calls: []
   allowHeldItems: 1
