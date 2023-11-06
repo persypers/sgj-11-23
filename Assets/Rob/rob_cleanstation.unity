@@ -1322,7 +1322,7 @@ PrefabInstance:
     - target: {fileID: 5294150350037350526, guid: 884fe17d73a051c4891cf5d0fadf2826,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 2527
+      value: 2530
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884fe17d73a051c4891cf5d0fadf2826, type: 3}
@@ -2160,7 +2160,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1536
+  m_Name: pb_Mesh81692
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3409,7 +3409,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26880
+  m_Name: pb_Mesh80768
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5620,6 +5620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   fuelValue: 0
+  keepGravity: 0
   pickupAudio: {fileID: 0}
   dropAudio: {fileID: 0}
   impactAudio: {fileID: 0}
@@ -6400,6 +6401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 7
   fuelValue: 7
+  keepGravity: 0
   pickupAudio: {fileID: 0}
   dropAudio: {fileID: 0}
   impactAudio: {fileID: 0}
@@ -6577,7 +6579,7 @@ PrefabInstance:
     - target: {fileID: 5294150350037350526, guid: 884fe17d73a051c4891cf5d0fadf2826,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 2536
+      value: 2539
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884fe17d73a051c4891cf5d0fadf2826, type: 3}
@@ -7044,6 +7046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   fuelValue: 50
+  keepGravity: 0
   pickupAudio: {fileID: 0}
   dropAudio: {fileID: 0}
   impactAudio: {fileID: 0}
@@ -7576,6 +7579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   fuelValue: 30
+  keepGravity: 0
   pickupAudio: {fileID: 6069246009074538279}
   dropAudio: {fileID: 0}
   impactAudio: {fileID: 6069246009074538276}
@@ -8218,6 +8222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   fuelValue: 0
+  keepGravity: 0
   pickupAudio: {fileID: 0}
   dropAudio: {fileID: 0}
   impactAudio: {fileID: 0}
@@ -8938,6 +8943,13 @@ MonoBehaviour:
   hasFuel: 1
   brakes: 0
   emergencyBrake: 0
+  indicators:
+    driveOn: {fileID: 0}
+    driveOff: {fileID: 0}
+    brakeOn: {fileID: 0}
+    brakeOff: {fileID: 0}
+    emergencyOn: {fileID: 0}
+    emergencyOff: {fileID: 0}
   driveLever: {fileID: 0}
   OnControlsChanged:
     m_PersistentCalls:
@@ -9085,6 +9097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   fuelValue: 50
+  keepGravity: 0
   pickupAudio: {fileID: 0}
   dropAudio: {fileID: 0}
   impactAudio: {fileID: 0}

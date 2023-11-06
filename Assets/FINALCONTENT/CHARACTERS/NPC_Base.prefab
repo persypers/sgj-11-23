@@ -403,6 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   fuelValue: 50
+  keepGravity: 0
   pickupAudio: {fileID: 3959348131102630424}
   dropAudio: {fileID: 7865087033744890455}
   impactAudio: {fileID: 5783696729948607482}
@@ -476,7 +477,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -572,7 +573,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
