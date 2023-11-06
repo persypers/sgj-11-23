@@ -148,7 +148,7 @@ MonoBehaviour:
   pickupAudio: {fileID: 8179084330536584632}
   dropAudio: {fileID: 8179084330536584635}
   impactAudio: {fileID: 4827775021997954459}
-  minImpactAudioImpulse: 300
+  minImpactAudioImpulse: 100
   maxImpactAudioImpulse: 2000
   impactAudioPitchVariance: 0.08
   OnPickUp:
@@ -160,6 +160,8 @@ MonoBehaviour:
   OnItemJointBreak:
     m_PersistentCalls:
       m_Calls: []
+  burn: 0
+  isBurning: 0
 --- !u!65 &8179084330536584608
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -184,7 +186,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: dd918e42d3a36d04cae0b0a8ae706deb,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 731fb6943588fab41b40561d14c6c791, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d45e4f9b449cfcd4999a99cb57e3d6de, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -281,7 +283,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: dd918e42d3a36d04cae0b0a8ae706deb,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 89bf353d6c00ed24c8487ad59a854caf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e47bd5b6be6a77741aa9c6dff2fc015f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -423,7 +425,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
