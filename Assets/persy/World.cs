@@ -24,8 +24,10 @@ public class World : Fancy.MonoSingleton< World >
 	public int relativeTileIndex = 1;
 	public int absoluteTileIndex = 1;
 
+	public float stationStopDistanceCorrection = 25.0f;
 	GameObject nextStation = null;
 	int nextStationTileIndex = -1;
+	bool nextStationEmergencyBrakeCommenced = true;
 
 	public void WarpPhysics()
 	{
@@ -92,18 +94,41 @@ public class World : Fancy.MonoSingleton< World >
 			var tile = sceneryManager.CreateNewTileAtStart();
 			OnTileCreated( tile );
 		}
+
+		if( nextStationTileIndex == absoluteTileIndex && !nextStationEmergencyBrakeCommenced && TrainScript.Instance.IsDriving )
+		{
+			// мы в тайле со станцией и ещё не делали остановку на ней
+			var speed = TrainScript.Instance.currentSpeed;
+			if( speed > 0.5f * TrainScript.Instance.maxSpeed )
+			{
+				var bDist = EstimateBrakingDistance( speed, TrainScript.Instance.brakeDeceleration )
+					- stationStopDistanceCorrection;
+				if( bDist * bDist <= ( TrainScript.Instance.transform.position - nextStation.transform.position ).sqrMagnitude )
+				{
+					TrainScript.Instance.DoEmergencyBrake();
+					nextStationEmergencyBrakeCommenced = true;
+				}
+			}
+		}
+
 	}
 
 	void OnTileCreated( TileData tile )
 	{
 		Debug.Log( "Tile entered: " + absoluteTileIndex );
-		var index = absoluteTileIndex;
-		//var createdTileIndex = index + 
 
-		if( nextStationTileIndex == -1 || nextStation == null )
+		if( nextStationTileIndex < absoluteTileIndex )
 		{
-			// первая рандомная станция будет планироваться при первой смене тайла - когда мы уже поехали
+			// выехали из тайла со станцией, пора запланировать следующую
 			nextStationTileIndex = CalculateNextStationTileIndex();
+			nextStation = null;
+			nextStationEmergencyBrakeCommenced = false;
+			
+			if( nextStationTileIndex < tile.index )
+			{
+				// станция запланировалась на уже созданный ранее тайл, рожаем сейчас
+				nextStationTileIndex = tile.index;
+			}
 		}
 
 		if( tile.index == nextStationTileIndex )

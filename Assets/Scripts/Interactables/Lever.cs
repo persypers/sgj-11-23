@@ -12,6 +12,7 @@ public class Lever : MonoBehaviour
 
 	public UnityEvent OnOn;
 	public UnityEvent OnOff;
+	public bool disableSet = false;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -27,6 +28,9 @@ public class Lever : MonoBehaviour
 
 	public void Set( bool value )
 	{
+		if( disableSet )
+			return;
+
 		if( value == IsOn )
 			return;
 		IsOn = value;

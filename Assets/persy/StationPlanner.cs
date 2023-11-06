@@ -14,6 +14,8 @@ public class StationPlanner : Fancy.MonoSingleton< StationPlanner >
 
 		// populate station
 
+		go.SetActive( true );
+
 		return go;
 	}
 }

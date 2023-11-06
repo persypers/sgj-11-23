@@ -22,6 +22,7 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 
 	public Vector3 currentVelocity => body.velocity;
 	public float currentSpeed => currentVelocity.magnitude;
+	public bool IsDriving => go && hasFuel;
 
 	public Lever driveLever;
 
@@ -48,12 +49,14 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 	public void DoEmergencyBrake()
 	{
 		IControlTheTrain( false );
+		driveLever.disableSet = true;
 		emergencyBrake = true;
 	}
 
 	// рычаг газа/тормоза вызывает это, когда игрок берётся за него
 	public void ClearEmergencyBrake()
 	{
+		driveLever.disableSet = false;
 		emergencyBrake = false;
 	}
 
