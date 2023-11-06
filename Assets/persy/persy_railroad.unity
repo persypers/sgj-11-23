@@ -2070,6 +2070,18 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 6307975814264795349}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6307975814264795354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3500793527440702581, guid: 018e60179b6f55a4bb38fc88dffa00c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6307975814264795349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae01309e2de3354c9ba5db540cc6442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8822797380901948950
 Transform:
   m_ObjectHideFlags: 0
@@ -2148,7 +2160,7 @@ MonoBehaviour:
   OnPickUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6307975814264795354}
         m_TargetAssemblyTypeName: TrainScript, Assembly-CSharp
         m_MethodName: ClearEmergencyBrake
         m_Mode: 1

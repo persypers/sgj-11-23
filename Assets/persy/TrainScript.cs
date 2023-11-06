@@ -12,7 +12,7 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 	public float maxSpeed = 30.0f;
 	public float accelerationl = 5.0f;
 	public float brakeDeceleration = 12.0f;
-	public float noFuelDeceleration = 0.1f;
+	public float noFuelDeceleration = 0.4f;
 
 	public float emergyBrakesOnDistanceFromPlayer = 70.0f;
 	
