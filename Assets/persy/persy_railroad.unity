@@ -1593,10 +1593,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00eb561c6ee2ed84195b1684967e0d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  train: {fileID: 0}
-  player: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  killBoxPlane: {fileID: 0}
+  train: {fileID: 6307975814264795354}
+  player: {fileID: 330478161}
+  spawnPoint: {fileID: 6307975814264795351}
+  killBoxPlane: {fileID: 7860628960263885324, guid: 118086feaf3730e42a60c2901fefa4bf,
+    type: 3}
   firstTileShift: -100
   WarpTriggerDistance: 600
   TileSize: 200
@@ -2925,6 +2926,11 @@ PrefabInstance:
       propertyPath: targetGameObject
       value: 
       objectReference: {fileID: 1054122389}
+    - target: {fileID: 7139866399959165572, guid: fc7d1e16e15bdda43addba5be7cf77a4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7254226632786838584, guid: fc7d1e16e15bdda43addba5be7cf77a4,
         type: 3}
       propertyPath: objectToTrigger
@@ -2944,6 +2950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953958839640291151, guid: fc7d1e16e15bdda43addba5be7cf77a4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc7d1e16e15bdda43addba5be7cf77a4, type: 3}
@@ -3411,6 +3422,12 @@ PrefabInstance:
 --- !u!54 &6307975814264795350 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 5561683087719163813, guid: 018e60179b6f55a4bb38fc88dffa00c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6307975814264795349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6307975814264795351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7350185019180247866, guid: 018e60179b6f55a4bb38fc88dffa00c8,
     type: 3}
   m_PrefabInstance: {fileID: 6307975814264795349}
   m_PrefabAsset: {fileID: 0}
