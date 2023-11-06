@@ -42,9 +42,11 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 		}
 	}
 
+	public float audioLevel;
+
 	void Update()
 	{
-		float audioLevel = Mathf.Clamp01( fuel / maxAudioAtFuel );
+		audioLevel = Mathf.Clamp01( fuel / maxAudioAtFuel );
 		float maxBurn = 0.0f;
 
 		for( int i = items.Count - 1; i >= 0; i-- )
@@ -64,6 +66,8 @@ public class Furnace : Fancy.MonoSingleton< Furnace >
 			}
 			maxBurn = Mathf.Max( maxBurn, item.burn );
 		}
+
+		audioLevel *= 0.5f + 0.5f * Mathf.Clamp01( Mathf.InverseLerp( 0.4f, 0.0f, door.Openness ) );
 
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName( "FuelLevel", audioLevel );
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName( "FurnaceDoorOpen", door.Openness );
