@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using FMOD.Studio;
 using UnityEngine.Events;
-using UnityEditor.ShaderGraph;
+//using UnityEditor.ShaderGraph;
 using RigidFps;
 
 public class TrainScript : Fancy.MonoSingleton< TrainScript >
