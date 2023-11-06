@@ -27,6 +27,19 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 	public float currentSpeed => currentVelocity.magnitude;
 	public bool IsDriving => go && hasFuel;
 
+	[System.Serializable]
+	public class Indicators
+	{
+		public GameObject driveOn;
+		public GameObject driveOff;
+		public GameObject brakeOn;
+		public GameObject brakeOff;
+		public GameObject emergencyOn;
+		public GameObject emergencyOff;
+	}
+	public Indicators indicators;
+
+
 	public Lever driveLever;
 
 	public UnityEvent OnControlsChanged;
@@ -47,6 +60,7 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 		driveLever.SetNoCallback( enabled );
 		if( wasEnabled != enabled )
 			OnControlsChanged.Invoke();
+		UpdateIndicators();
 	}
 
 	public void DoEmergencyBrake()
@@ -54,6 +68,7 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 		IControlTheTrain( false );
 		driveLever.disableSet = true;
 		emergencyBrake = true;
+		UpdateIndicators();
 	}
 
 	// рычаг газа/тормоза вызывает это, когда игрок берётся за него
@@ -61,6 +76,17 @@ public class TrainScript : Fancy.MonoSingleton< TrainScript >
 	{
 		driveLever.disableSet = false;
 		emergencyBrake = false;
+		UpdateIndicators();
+	}
+
+	public void UpdateIndicators()
+	{
+		indicators.driveOn.SetActive( go );
+		indicators.driveOff.SetActive( !go );
+		indicators.brakeOn.SetActive( brakes );
+		indicators.brakeOff.SetActive( !brakes );
+		indicators.emergencyOn.SetActive( emergencyBrake );
+		indicators.emergencyOff.SetActive( !emergencyBrake );
 	}
 
 	void FixedUpdate()
