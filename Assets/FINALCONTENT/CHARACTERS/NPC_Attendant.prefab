@@ -76,6 +76,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1967183588778717361, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: textDataAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fc1afa0e90274694cb2379915f9b2ff1,
+        type: 2}
     - target: {fileID: 1967183589580312150, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
         type: 3}
       propertyPath: m_RootOrder
@@ -179,66 +185,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4919151356235890211}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8371005865590086247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847865164238925947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 26
-  itemJoint: {fileID: 6847865164194034150}
-  itemTriggerCollider: {fileID: 6847865164159741853}
-  setIgnoreGravity: 0
-  nonUnique: 0
-  allowTriggerOnPlayerHeldItem: 0
-  newStateName: Chess
-  playerCollisionMessageTrigger: {fileID: 6847865163462217362}
---- !u!114 &7367680198720428426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847865164238925947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 14
-  itemJoint: {fileID: 6847865164194034150}
-  itemTriggerCollider: {fileID: 6847865164159741853}
-  setIgnoreGravity: 0
-  nonUnique: 0
-  allowTriggerOnPlayerHeldItem: 0
-  newStateName: Laptop
-  playerCollisionMessageTrigger: {fileID: 6847865163462217362}
---- !u!114 &5594442762655693244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847865164238925947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 20
-  itemJoint: {fileID: 6847865164194034150}
-  itemTriggerCollider: {fileID: 6847865164159741853}
-  setIgnoreGravity: 0
-  nonUnique: 0
-  allowTriggerOnPlayerHeldItem: 0
-  newStateName: Eggs
-  playerCollisionMessageTrigger: {fileID: 6847865163462217362}
 --- !u!114 &5506581005695298417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +206,63 @@ MonoBehaviour:
   exchangeDelay: 3
   returnExchangeItem: {fileID: 4606648493529423074, guid: cf4d17193e8b86c4b96b2362c0b065c8,
     type: 3}
+--- !u!114 &5594442762655693244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847865164238925947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 20
+  itemJoint: {fileID: 6847865164194034150}
+  itemTriggerCollider: {fileID: 6847865164159741853}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Eggs
+  playerCollisionMessageTrigger: {fileID: 6847865163462217362}
+--- !u!114 &7367680198720428426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847865164238925947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 14
+  itemJoint: {fileID: 6847865164194034150}
+  itemTriggerCollider: {fileID: 6847865164159741853}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Laptop
+  playerCollisionMessageTrigger: {fileID: 6847865163462217362}
+--- !u!114 &8371005865590086247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847865164238925947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835e1e1273be0b240afc8c3abc264f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 26
+  itemJoint: {fileID: 6847865164194034150}
+  itemTriggerCollider: {fileID: 6847865164159741853}
+  setIgnoreGravity: 0
+  nonUnique: 0
+  allowTriggerOnPlayerHeldItem: 0
+  newStateName: Chess
+  playerCollisionMessageTrigger: {fileID: 6847865163462217362}

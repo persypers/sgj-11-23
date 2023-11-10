@@ -13,6 +13,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 88c0bdbd9c1b54c4db02c19152cc64f4,
         type: 2}
+    - target: {fileID: 1967183589503731114, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1967183589520740287, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -36,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 1967183589580312147, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
         type: 3}
       propertyPath: m_Center.y
-      value: -0.34
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 1967183589580312150, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
         type: 3}
@@ -97,6 +102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967183589580312157, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
+        type: 3}
+      propertyPath: offset.y
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1967183589781017379, guid: 9bbaa4444dd13ac4088e899ba4604ccf,
         type: 3}

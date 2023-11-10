@@ -23,6 +23,7 @@ public class GrabItemBehaviour : MonoBehaviour
 		HashSet< GrabItemBehaviour > activeBehaviours = new HashSet< GrabItemBehaviour >();
 		GrabItemBehaviour activeUnique = null;
 		List< QueueEntry > queue = new List< QueueEntry >();
+		[System.Serializable]
 		struct QueueEntry {
 			public GrabItemBehaviour behaviour;
 			public Item item;
@@ -114,6 +115,7 @@ public class GrabItemBehaviour : MonoBehaviour
 	public void DropItem( Item item )
 	{
 		business.Dequeue( this, item );
+		business.OnBehaviourEnd( this );
 		item.OnPickUp.RemoveListener( DropItem );
 		item.OnItemJointBreak.RemoveListener( DropItem );
 		if( setIgnoreGravity )
@@ -127,7 +129,6 @@ public class GrabItemBehaviour : MonoBehaviour
 		if( behaviour != null )
 		{
 			StopCoroutine( behaviour );
-			business.OnBehaviourEnd( this );
 			OnBehaviourCanceled( item );
 		}
 	}

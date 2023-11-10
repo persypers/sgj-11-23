@@ -17,14 +17,18 @@ public class ExchangeItemsBehaviour : GrabItemBehaviour
                 playerCollisionMessageTrigger.SetCurrentState(item.type.ToString());
         }
         var textLines = playerCollisionMessageTrigger.textDataAsset.GetTextLinesByStateName(item.type.ToString());
-        BubbleTextManager.Instance.DropNPCMessagesQueue(gameObject);
-        BubbleTextManager.Instance.OnAddMessageToQueue(
-                    new BubbleTextMessage
-                    {
-                        messageText = textLines[Random.Range(0, textLines.Count)].text,
-                        showDuration = playerCollisionMessageTrigger.showDuration,
-                        target = gameObject
-                    });
+        if( textLines.Count > 0 )
+        {
+
+            BubbleTextManager.Instance.DropNPCMessagesQueue(gameObject);
+            BubbleTextManager.Instance.OnAddMessageToQueue(
+                        new BubbleTextMessage
+                        {
+                            messageText = textLines[Random.Range(0, textLines.Count)].text,
+                            showDuration = playerCollisionMessageTrigger.showDuration,
+                            target = gameObject
+                        });
+        }
         yield return new WaitForSeconds(exchangeDelay);
         OnItemDestroy(item, playerCollisionMessageTrigger);
     }
