@@ -52,4 +52,10 @@ public class PlayerCollisionMessageTrigger : MonoBehaviour
     {
 
     }
+
+    void OnDisable()
+    {
+        if( BubbleTextManager.Instance )
+            BubbleTextManager.Instance.RemoveMessageByObject( targetGameObject );
+    }
 }

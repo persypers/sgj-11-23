@@ -45,6 +45,8 @@ public class StationSign : MonoBehaviour
 
 	public TMPro.TMP_Text label;
 
+	public bool IsDetached { get; private set; } = false;
+
 	public void OnEnable()
 	{
 		if( deck.Count == 0 )
@@ -62,12 +64,14 @@ public class StationSign : MonoBehaviour
 				deck[ i ] = temp;
 			}
 		}
-
+		Debug.Log( "sign:enbale: " + name + " : " + (label == null) + " : " + (deck==null));
 		label.text = deck[ deck.Count - 1 ];
+		deck.RemoveAt( deck.Count - 1);
 	}
 
 	public void Detach()
 	{
+		IsDetached = true;
 		gameObject.layer = label.gameObject.layer;
 		transform.parent = null;
 		GetComponent< Rigidbody >().isKinematic = false;

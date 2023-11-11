@@ -124,6 +124,8 @@ MonoBehaviour:
     chanceToSpawn: 0.7
     tries: 3
     onlyYRotation: 0
+  signTemplate: {fileID: 6030848345543933329}
+  signInstance: {fileID: 0}
 --- !u!1 &3577297740092902361
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +573,12 @@ PrefabInstance:
 --- !u!4 &5703302231748823105 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3358264678372964835, guid: c47b554cc9168784cb20101a428c9578,
+    type: 3}
+  m_PrefabInstance: {fileID: 7042715879074541986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6030848345543933329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3606574443760471091, guid: c47b554cc9168784cb20101a428c9578,
     type: 3}
   m_PrefabInstance: {fileID: 7042715879074541986}
   m_PrefabAsset: {fileID: 0}

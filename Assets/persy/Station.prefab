@@ -52,8 +52,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c32c8a0cef586e448a5c38a96404ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationSign: {fileID: 6030848345543933329}
-  stationSignClone: {fileID: 0}
   itemGenerators:
   - generator: {fileID: 11400000, guid: 50f42031a9144b44c878743e238df8e9, type: 2}
     volume: {fileID: 7335948803501383283}
@@ -85,6 +83,8 @@ MonoBehaviour:
     chanceToSpawn: 0.3
     tries: 2
     onlyYRotation: 0
+  signTemplate: {fileID: 6030848345543933329}
+  signInstance: {fileID: 0}
 --- !u!1 &3577297740092902361
 GameObject:
   m_ObjectHideFlags: 0

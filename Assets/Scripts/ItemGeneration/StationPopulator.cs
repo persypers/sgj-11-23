@@ -15,6 +15,10 @@ public class StationPopulator : MonoBehaviour
 	}
 
 	public List< Entry > itemGenerators;
+
+	public GameObject signTemplate;
+	public StationSign signInstance;
+
 	public void Populate( TileData tile )
 	{
 		for( int i = 0; i < itemGenerators.Count; i++ )
@@ -27,6 +31,15 @@ public class StationPopulator : MonoBehaviour
 					var go = Spawn( entry.generator.Get(), entry.volume, entry.onlyYRotation );
 				}
 			}
+		}
+
+		if( signInstance == null || !signInstance || signInstance.IsDetached )
+		{
+			// detached signs become unparented physical object and will be destroyed accordingly
+			var go = GameObject.Instantiate( signTemplate, signTemplate.transform.parent );
+			signInstance = go.GetComponent< StationSign >();
+			signTemplate.SetActive( false );
+			go.SetActive( true );
 		}
 	}
 

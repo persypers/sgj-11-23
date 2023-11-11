@@ -92,12 +92,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2695076526365800361}
+  - component: {fileID: 5854251682319221043}
+  - component: {fileID: 8715805236081774471}
   - component: {fileID: 4776945916138684084}
   - component: {fileID: 2518878729053765960}
   - component: {fileID: 4833222611029612342}
   - component: {fileID: 4340055509928466950}
-  - component: {fileID: 8715805236081774471}
-  - component: {fileID: 5854251682319221043}
   m_Layer: 14
   m_Name: StationLabel
   m_TagString: Untagged
@@ -122,6 +122,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5854251682319221043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345119501832927408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1618d7f96d9004fbbb9adda75f9bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 3561779966597011035}
+--- !u!114 &8715805236081774471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345119501832927408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce772343d222ca4d84f22a7c4b93d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 39
+  fuelValue: 20
+  keepGravity: 0
+  pickupAudio: {fileID: 0}
+  dropAudio: {fileID: 0}
+  impactAudio: {fileID: 0}
+  minImpactAudioImpulse: 300
+  maxImpactAudioImpulse: 2000
+  impactAudioPitchVariance: 0.08
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5854251682319221043}
+        m_TargetAssemblyTypeName: StationSign, Assembly-CSharp
+        m_MethodName: Detach
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDrop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnItemJointBreak:
+    m_PersistentCalls:
+      m_Calls: []
+  burn: 0
+  isBurning: 0
 --- !u!33 &4776945916138684084
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -201,62 +258,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8715805236081774471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6345119501832927408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce772343d222ca4d84f22a7c4b93d8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 39
-  fuelValue: 20
-  pickupAudio: {fileID: 0}
-  dropAudio: {fileID: 0}
-  impactAudio: {fileID: 0}
-  minImpactAudioImpulse: 300
-  maxImpactAudioImpulse: 2000
-  impactAudioPitchVariance: 0.08
-  OnPickUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5854251682319221043}
-        m_TargetAssemblyTypeName: StationSign, Assembly-CSharp
-        m_MethodName: Detach
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDrop:
-    m_PersistentCalls:
-      m_Calls: []
-  OnItemJointBreak:
-    m_PersistentCalls:
-      m_Calls: []
-  burn: 0
-  isBurning: 0
---- !u!114 &5854251682319221043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6345119501832927408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d1618d7f96d9004fbbb9adda75f9bfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  label: {fileID: 3561779966597011035}
 --- !u!1 &7561358785156891711
 GameObject:
   m_ObjectHideFlags: 0
